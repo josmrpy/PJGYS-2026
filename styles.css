@@ -57,8 +57,8 @@
 
 /* Target all links inside a paragraph */
 p a {
-  color: #ed1a39;         /* Changes the text color (Hex or name) */
-  text-decoration: none;  /* Optional: Removes the default underline */
+  color: #ed1a39; /* Changes the text color (Hex or name) */
+  text-decoration: none; /* Optional: Removes the default underline */
 }
 
 /* ==================================================================
@@ -466,6 +466,7 @@ h3 {
   margin: 0 0 3px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -477,6 +478,7 @@ h3 {
 
 .tarjeta.abierta .tarjeta-titulo {
   -webkit-line-clamp: unset;
+  line-clamp: unset;
 }
 
 .tarjeta-flecha {

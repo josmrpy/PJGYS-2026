@@ -28,7 +28,8 @@ const propuestas = [
     grupo: "Guanacaste #000",
     resumen:
       "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
-    drive: "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
+    drive:
+      "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
     pdf: "propuesta1.pdf",
   },
   {
@@ -38,7 +39,8 @@ const propuestas = [
     grupo: "Cartago #000",
     resumen:
       "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
-    drive: "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
+    drive:
+      "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
     pdf: "propuesta2.pdf",
   },
   {
@@ -48,7 +50,8 @@ const propuestas = [
     grupo: "Heredia #000",
     resumen:
       "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
-    drive: "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
+    drive:
+      "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
     pdf: "propuesta3.pdf",
   },
   {
@@ -58,7 +61,8 @@ const propuestas = [
     grupo: "Heredia #000",
     resumen:
       "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
-    drive: "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
+    drive:
+      "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
     pdf: "propuesta4.pdf",
   },
   {
@@ -68,17 +72,19 @@ const propuestas = [
     grupo: "Cartago #000",
     resumen:
       "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
-    drive: "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
+    drive:
+      "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
     pdf: "propuesta5.pdf",
   },
   {
     id: 6,
     titulo: "nombre de propuesta",
     autor: "Josimar Madrigal Espinoza",
-    grupo: "Limón #000",
+    grupo: "Limón #144",
     resumen:
       "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
-    drive: "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
+    drive:
+      "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
     pdf: "propuesta6.pdf",
   },
   {
@@ -88,7 +94,8 @@ const propuestas = [
     grupo: "San José #000",
     resumen:
       "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
-    drive: "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
+    drive:
+      "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
     pdf: "propuesta7.pdf",
   },
   {
@@ -98,7 +105,8 @@ const propuestas = [
     grupo: "Alajuela #000",
     resumen:
       "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
-    drive: "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
+    drive:
+      "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
     pdf: "propuesta8.pdf",
   },
   {
@@ -108,7 +116,8 @@ const propuestas = [
     grupo: "Limón #000",
     resumen:
       "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
-    drive: "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
+    drive:
+      "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
     pdf: "propuesta9.pdf",
   },
   {
@@ -118,7 +127,8 @@ const propuestas = [
     grupo: "Cartago #000",
     resumen:
       "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
-    drive: "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
+    drive:
+      "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
     pdf: "propuesta10.pdf",
   },
   {
@@ -128,7 +138,8 @@ const propuestas = [
     grupo: "San José #000",
     resumen:
       "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
-    drive: "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
+    drive:
+      "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
     pdf: "propuesta11.pdf",
   },
 ];
