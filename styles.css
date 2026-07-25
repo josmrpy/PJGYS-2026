@@ -13,7 +13,6 @@
      8. RESPONSIVE
    ================================================================== */
 
-
 /* ==================================================================
    1. COLORES Y TIPOGRAFÍA
    ------------------------------------------------------------------
@@ -26,17 +25,17 @@
                           importantes. Usar con moderación.
      El resto son neutros de apoyo (fondos, texto, bordes).
    ================================================================== */
-:root{
+:root {
   /* --- Colores institucionales --- */
-  --azul:              #2C1261;
-  --rojo:               #ED1A39;
+  --azul: #2c1261;
+  --rojo: #ed1a39;
 
   /* --- Neutros --- */
-  --blanco:              #FFFFFF;
-  --fondo-alterno:        #F8F9FC;
-  --texto-principal:       #1F2937;
-  --texto-secundario:       #6B7280;
-  --borde:                   #E5E7EB;
+  --blanco: #ffffff;
+  --fondo-alterno: #f8f9fc;
+  --texto-principal: #1f2937;
+  --texto-secundario: #6b7280;
+  --borde: #e5e7eb;
 
   /* --- Tipografía ---
      Título:  Montserrat  → encabezados y elementos estructurales
@@ -44,26 +43,29 @@
      Para cambiar la fuente, edita estas dos variables y el bloque
      <link> de Google Fonts en index.html. */
   --fuente-titulo: "Montserrat", "Segoe UI", sans-serif;
-  --fuente-texto:   "Nunito", "Segoe UI", sans-serif;
+  --fuente-texto: "Nunito", "Segoe UI", sans-serif;
 
   /* --- Forma y transición ---
      Solo se usan transiciones cortas para: abrir/cerrar propuestas
      y estados de hover discretos en botones y tarjetas. */
   --radio-s: 8px;
   --radio-m: 12px;
-  --sombra-suave: 0 1px 3px rgba(31,41,55,0.06);
-  --sombra-media:  0 4px 12px rgba(31,41,55,0.08);
+  --sombra-suave: 0 1px 3px rgba(31, 41, 55, 0.06);
+  --sombra-media: 0 4px 12px rgba(31, 41, 55, 0.08);
   --transicion: 160ms ease;
 }
-
 
 /* ==================================================================
    2. BASE
    ================================================================== */
-*{ box-sizing: border-box; }
-html{ scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
 
-body{
+body {
   margin: 0;
   background: var(--blanco);
   color: var(--texto-principal);
@@ -72,24 +74,37 @@ body{
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
-
-.skip-link{
-  position: absolute; left: -999px; top: auto;
-  background: var(--azul); color: #fff; padding: 12px 18px;
-  border-radius: 0 0 8px 0; z-index: 200;
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulo);
+  margin: 0;
+  color: var(--azul);
 }
-.skip-link:focus{ left: 0; top: 0; }
 
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: var(--azul);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 0 0 8px 0;
+  z-index: 200;
+}
+.skip-link:focus {
+  left: 0;
+  top: 0;
+}
 
 /* ==================================================================
    3. BARRA SUPERIOR
    ================================================================== */
-.topbar{
+.topbar {
   background: var(--azul);
   color: var(--blanco);
 }
-.topbar-inner{
+.topbar-inner {
   max-width: 1180px;
   margin: 0 auto;
   padding: 12px 28px;
@@ -99,18 +114,21 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
   gap: 12px;
   flex-wrap: wrap;
 }
-.topbar-titulo{
+.topbar-logo {
+  height: 64px;
+  display: block;
+}
+.topbar-titulo {
   font-family: var(--fuente-titulo);
   font-size: 0.85rem;
   font-weight: 700;
 }
-.topbar-tag{
+.topbar-tag {
   font-size: 0.78rem;
   font-weight: 600;
-  color: #D8CFEC;
+  color: #d8cfec;
   letter-spacing: 0.03em;
 }
-
 
 /* ==================================================================
    4. HERO
@@ -120,12 +138,12 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
    animaciones. Para editar los textos, ve a index.html → <section
    class="hero">.
    ================================================================== */
-.hero{
+.hero {
   background: var(--fondo-alterno);
   border-bottom: 1px solid var(--borde);
 }
 
-.hero-inner{
+.hero-inner {
   max-width: 1180px;
   margin: 0 auto;
   padding: 64px 28px;
@@ -135,7 +153,7 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
   align-items: center;
 }
 
-.hero-eyebrow{
+.hero-eyebrow {
   margin: 0 0 12px;
   font-size: 0.78rem;
   font-weight: 700;
@@ -144,14 +162,14 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
   color: var(--rojo);
 }
 
-.hero-texto h1{
+.hero-texto h1 {
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 800;
   letter-spacing: -0.01em;
   line-height: 1.15;
 }
 
-.hero-subtitulo{
+.hero-subtitulo {
   font-family: var(--fuente-titulo);
   font-weight: 600;
   font-size: 1.08rem;
@@ -160,14 +178,14 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
   max-width: 46ch;
 }
 
-.hero-desc{
+.hero-desc {
   color: var(--texto-secundario);
   font-size: 1rem;
   max-width: 50ch;
   margin: 0 0 28px;
 }
 
-.hero-cta{
+.hero-cta {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -177,7 +195,7 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
 /* --- Botones ---
    Un único color principal por botón; el hover solo cambia el tono
    de fondo o el borde, sin desplazamientos ni sombras exageradas. */
-.boton{
+.boton {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -189,35 +207,46 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
   text-decoration: none;
   cursor: pointer;
   border: 1.5px solid transparent;
-  transition: background var(--transicion), border-color var(--transicion), color var(--transicion);
+  transition:
+    background var(--transicion),
+    border-color var(--transicion),
+    color var(--transicion);
 }
 
-.boton-primario{
+.boton-primario {
   background: var(--rojo);
   color: #fff;
 }
-.boton-primario:hover{ background: #D4152F; }
+.boton-primario:hover {
+  background: #d4152f;
+}
 
-.boton-secundario{
+.boton-secundario {
   background: transparent;
   color: var(--azul);
   border-color: var(--borde);
 }
-.boton-secundario:hover{ border-color: var(--azul); background: var(--blanco); }
+.boton-secundario:hover {
+  border-color: var(--azul);
+  background: var(--blanco);
+}
 
-.hero-stats{
+.hero-stats {
   display: flex;
   gap: 32px;
   flex-wrap: wrap;
 }
-.hero-stat{ display: flex; flex-direction: column; }
-.hero-stat-num{
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+}
+.hero-stat-num {
   font-family: var(--fuente-titulo);
   font-weight: 800;
   font-size: 1.5rem;
   color: var(--azul);
 }
-.hero-stat-label{
+.hero-stat-label {
   font-size: 0.78rem;
   color: var(--texto-secundario);
   font-weight: 600;
@@ -228,10 +257,10 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
    ".hero-imagen-wrap". Cuando reemplaces el marcador por una
    imagen real (<img class="hero-imagen">), esta misma proporción
    y borde redondeado se mantienen automáticamente. */
-.hero-imagen-wrap{
+.hero-imagen-wrap {
   width: 100%;
 }
-.hero-imagen-marcador{
+.hero-imagen-marcador {
   width: 100%;
   aspect-ratio: 4 / 3;
   border: 1.5px dashed var(--borde);
@@ -246,19 +275,19 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
   text-align: center;
   padding: 20px;
 }
-.hero-imagen-marcador p{
+.hero-imagen-marcador p {
   margin: 0;
   font-size: 0.86rem;
   font-weight: 700;
   color: var(--texto-secundario);
 }
-.hero-imagen-nota{
+.hero-imagen-nota {
   font-weight: 400 !important;
   font-size: 0.76rem !important;
   max-width: 26ch;
 }
 
-.hero-imagen{
+.hero-imagen {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
@@ -266,18 +295,17 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
   display: block;
 }
 
-
 /* ==================================================================
    5. BARRA DE HERRAMIENTAS (buscador)
    ================================================================== */
-.herramientas{
+.herramientas {
   background: var(--blanco);
   border-bottom: 1px solid var(--borde);
   position: sticky;
   top: 0;
   z-index: 30;
 }
-.herramientas-inner{
+.herramientas-inner {
   max-width: 1180px;
   margin: 0 auto;
   padding: 16px 28px;
@@ -288,7 +316,7 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
   flex-wrap: wrap;
 }
 
-.buscador-wrap{
+.buscador-wrap {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -300,22 +328,25 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
   max-width: 380px;
   color: var(--texto-secundario);
 }
-.buscador-wrap:focus-within{
+.buscador-wrap:focus-within {
   border-color: var(--azul);
 }
-.buscador-wrap input{
-  border: 0; outline: 0; background: transparent;
-  font-family: var(--fuente-texto); font-size: 0.94rem;
-  color: var(--texto-principal); width: 100%;
+.buscador-wrap input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-family: var(--fuente-texto);
+  font-size: 0.94rem;
+  color: var(--texto-principal);
+  width: 100%;
 }
 
-.herramientas-conteo{
+.herramientas-conteo {
   margin: 0;
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--azul);
 }
-
 
 /* ==================================================================
    6. GRID Y TARJETAS DE PROPUESTAS
@@ -324,20 +355,20 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
    grupo, resumen, PDF, enlace de Drive), edita el arreglo
    "propuestas" en script.js — no este archivo.
    ================================================================== */
-.seccion-propuestas{
+.seccion-propuestas {
   max-width: 1180px;
   margin: 0 auto;
   padding: 44px 28px 80px;
 }
 
-.grid-propuestas{
+.grid-propuestas {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 18px;
   align-items: start;
 }
 
-.sin-resultados{
+.sin-resultados {
   text-align: center;
   color: var(--texto-secundario);
   padding: 56px 0;
@@ -346,26 +377,28 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
 /* --- Tarjeta colapsada ---
    El hover es intencionalmente discreto: solo cambia el color del
    borde y la sombra, sin desplazamientos ni escalados. */
-.tarjeta{
+.tarjeta {
   background: var(--blanco);
   border: 1px solid var(--borde);
   border-radius: var(--radio-m);
   box-shadow: var(--sombra-suave);
   overflow: hidden;
-  transition: box-shadow var(--transicion), border-color var(--transicion);
+  transition:
+    box-shadow var(--transicion),
+    border-color var(--transicion);
 }
 
-.tarjeta:not(.abierta):hover{
+.tarjeta:not(.abierta):hover {
   box-shadow: var(--sombra-media);
-  border-color: #C9BBDD;
+  border-color: #c9bbdd;
 }
 
-.tarjeta.abierta{
+.tarjeta.abierta {
   grid-column: 1 / -1;
   border-color: var(--azul);
 }
 
-.tarjeta-cabecera{
+.tarjeta-cabecera {
   width: 100%;
   display: flex;
   align-items: center;
@@ -380,7 +413,7 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
 }
 
 /* Insignia numerada: color plano institucional, sin degradado */
-.tarjeta-insignia{
+.tarjeta-insignia {
   position: relative;
   flex: none;
   width: 42px;
@@ -398,7 +431,7 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
 
 /* Insignia de "revisada": círculo rojo con marca, según la regla de
    que el rojo se usa para indicadores activos/de estado */
-.tarjeta-insignia-check{
+.tarjeta-insignia-check {
   position: absolute;
   bottom: -5px;
   right: -5px;
@@ -411,10 +444,15 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
   align-items: center;
   justify-content: center;
 }
-.tarjeta.revisada .tarjeta-insignia-check{ display: flex; }
+.tarjeta.revisada .tarjeta-insignia-check {
+  display: flex;
+}
 
-.tarjeta-info{ flex: 1 1 auto; min-width: 0; }
-.tarjeta-titulo{
+.tarjeta-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.tarjeta-titulo {
   font-family: var(--fuente-titulo);
   font-weight: 700;
   font-size: 1rem;
@@ -425,15 +463,17 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.tarjeta-meta{
+.tarjeta-meta {
   font-size: 0.82rem;
   color: var(--texto-secundario);
   font-weight: 600;
 }
 
-.tarjeta.abierta .tarjeta-titulo{ -webkit-line-clamp: unset; }
+.tarjeta.abierta .tarjeta-titulo {
+  -webkit-line-clamp: unset;
+}
 
-.tarjeta-flecha{
+.tarjeta-flecha {
   flex: none;
   display: inline-flex;
   align-items: center;
@@ -443,41 +483,47 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
   font-size: 0.8rem;
   color: var(--azul);
 }
-.tarjeta-flecha svg{ transition: transform var(--transicion); }
-.tarjeta.abierta .tarjeta-flecha svg{ transform: rotate(90deg); }
+.tarjeta-flecha svg {
+  transition: transform var(--transicion);
+}
+.tarjeta.abierta .tarjeta-flecha svg {
+  transform: rotate(90deg);
+}
 
-@media (max-width: 520px){
-  .tarjeta-flecha span{ display: none; }
+@media (max-width: 520px) {
+  .tarjeta-flecha span {
+    display: none;
+  }
 }
 
 /* --- Panel expandido ---
    Única animación funcional del sitio: abrir y cerrar la propuesta.
    La altura se calcula en script.js (panel.scrollHeight). */
-.tarjeta-panel{
+.tarjeta-panel {
   max-height: 0;
   overflow: hidden;
   transition: max-height 320ms ease;
 }
 
-.tarjeta-panel-inner{
+.tarjeta-panel-inner {
   padding: 4px 22px 26px;
   border-top: 1px solid var(--borde);
   margin-top: 4px;
 }
 
-.detalle-grid{
+.detalle-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 12px;
   margin: 18px 0 20px;
 }
-.detalle-campo{
+.detalle-campo {
   background: var(--fondo-alterno);
   border: 1px solid var(--borde);
   border-radius: var(--radio-s);
   padding: 12px 14px;
 }
-.detalle-campo dt{
+.detalle-campo dt {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -485,50 +531,57 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
   font-weight: 700;
   margin-bottom: 3px;
 }
-.detalle-campo dd{ margin: 0; font-weight: 700; color: var(--azul); font-size: 0.92rem; }
+.detalle-campo dd {
+  margin: 0;
+  font-weight: 700;
+  color: var(--azul);
+  font-size: 0.92rem;
+}
 
-.detalle-resumen{
+.detalle-resumen {
   font-size: 0.96rem;
   color: var(--texto-principal);
   max-width: 76ch;
   margin: 0 0 22px;
 }
 
-.detalle-acciones{
+.detalle-acciones {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 24px;
 }
 
-.boton-outline{
+.boton-outline {
   background: var(--blanco);
   border-color: var(--borde);
   color: var(--azul);
   padding: 10px 18px;
 }
-.boton-outline:hover{ border-color: var(--azul); }
+.boton-outline:hover {
+  border-color: var(--azul);
+}
 
-.boton-marcar{
+.boton-marcar {
   background: var(--fondo-alterno);
   border: 1.5px solid var(--borde);
   color: var(--texto-principal);
   padding: 10px 18px;
 }
-.tarjeta.revisada .boton-marcar{
+.tarjeta.revisada .boton-marcar {
   background: var(--blanco);
   border-color: var(--rojo);
   color: var(--rojo);
 }
 
 /* --- Visor de documento --- */
-.detalle-visor{
+.detalle-visor {
   border: 1px solid var(--borde);
   border-radius: var(--radio-m);
   overflow: hidden;
   background: var(--fondo-alterno);
 }
-.visor-etiqueta{
+.visor-etiqueta {
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -536,14 +589,14 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
   font-weight: 700;
   padding: 12px 16px 0;
 }
-.detalle-visor iframe{
+.detalle-visor iframe {
   width: 100%;
   height: 500px;
   border: 0;
   display: block;
 }
 
-.detalle-nav{
+.detalle-nav {
   display: flex;
   justify-content: space-between;
   gap: 10px;
@@ -551,57 +604,75 @@ h1, h2, h3{ font-family: var(--fuente-titulo); margin: 0; color: var(--azul); }
   padding-top: 18px;
   border-top: 1px solid var(--borde);
 }
-.detalle-nav button:disabled{
+.detalle-nav button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
 
-
 /* ==================================================================
    7. PIE DE PÁGINA
    ================================================================== */
-.site-footer{
+.site-footer {
   background: var(--azul);
-  color: #D8CFEC;
+  color: #d8cfec;
 }
-.footer-inner{
+.footer-inner {
   max-width: 1180px;
   margin: 0 auto;
   padding: 36px 28px 30px;
   text-align: center;
 }
-.footer-titulo{
+.footer-titulo {
   color: #fff;
   font-family: var(--fuente-titulo);
   font-weight: 700;
   margin: 0 0 4px;
 }
-.footer-sub{ margin: 0 0 16px; font-size: 0.88rem; }
-.watermark-footer{
+.footer-sub {
+  margin: 0 0 16px;
+  font-size: 0.88rem;
+}
+.watermark-footer {
   margin: 0;
   font-size: 0.76rem;
   opacity: 0.85;
-  border-top: 1px solid rgba(255,255,255,0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: 14px;
   display: inline-block;
 }
 
-
 /* ==================================================================
    8. RESPONSIVE
    ================================================================== */
-@media (max-width: 900px){
-  .hero-inner{ grid-template-columns: 1fr; padding: 44px 24px; gap: 32px; }
-  .hero-imagen-wrap{ order: -1; max-width: 420px; margin: 0 auto; }
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    padding: 44px 24px;
+    gap: 32px;
+  }
+  .hero-imagen-wrap {
+    order: -1;
+    max-width: 420px;
+    margin: 0 auto;
+  }
 }
 
-@media (max-width: 560px){
-  .grid-propuestas{ grid-template-columns: 1fr; }
-  .hero-stats{ gap: 20px; }
-  .detalle-visor iframe{ height: 340px; }
+@media (max-width: 560px) {
+  .grid-propuestas {
+    grid-template-columns: 1fr;
+  }
+  .hero-stats {
+    gap: 20px;
+  }
+  .detalle-visor iframe {
+    height: 340px;
+  }
 }
 
 /* Respeta la preferencia de "reducir movimiento" del sistema */
-@media (prefers-reduced-motion: reduce){
-  *{ transition: none !important; scroll-behavior: auto !important; }
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }

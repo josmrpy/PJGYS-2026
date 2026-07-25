@@ -26,100 +26,113 @@ const propuestas = [
     titulo: "Fortalecimiento de espacios de participación juvenil rural",
     autor: "Nombre Apellido",
     grupo: "GYS 000",
-    resumen: "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+    resumen:
+      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
     drive: "https://drive.google.com/",
-    pdf: "propuesta1.pdf"
+    pdf: "propuesta1.pdf",
   },
   {
     id: 2,
     titulo: "Programa de alfabetización digital para tropas rurales",
     autor: "Nombre Apellido",
     grupo: "GYS 000",
-    resumen: "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+    resumen:
+      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
     drive: "https://drive.google.com/",
-    pdf: "propuesta2.pdf"
+    pdf: "propuesta2.pdf",
   },
   {
     id: 3,
     titulo: "Protocolo unificado de primeros auxilios en campamentos",
     autor: "Nombre Apellido",
     grupo: "GYS 000",
-    resumen: "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+    resumen:
+      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
     drive: "https://drive.google.com/",
-    pdf: "propuesta3.pdf"
+    pdf: "propuesta3.pdf",
   },
   {
     id: 4,
     titulo: "Fondo de becas para actividades scout de alto costo",
     autor: "Nombre Apellido",
     grupo: "GYS 000",
-    resumen: "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+    resumen:
+      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
     drive: "https://drive.google.com/",
-    pdf: "propuesta4.pdf"
+    pdf: "propuesta4.pdf",
   },
   {
     id: 5,
     titulo: "Certificación de habilidades blandas para dirigentes juveniles",
     autor: "Nombre Apellido",
     grupo: "GYS 000",
-    resumen: "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+    resumen:
+      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
     drive: "https://drive.google.com/",
-    pdf: "propuesta5.pdf"
+    pdf: "propuesta5.pdf",
   },
   {
     id: 6,
     titulo: "Red de intercambio ambiental entre grupos costeros",
     autor: "Nombre Apellido",
     grupo: "GYS 000",
-    resumen: "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+    resumen:
+      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
     drive: "https://drive.google.com/",
-    pdf: "propuesta6.pdf"
+    pdf: "propuesta6.pdf",
   },
   {
     id: 7,
-    titulo: "Guía de accesibilidad para actividades con población con discapacidad",
+    titulo:
+      "Guía de accesibilidad para actividades con población con discapacidad",
     autor: "Nombre Apellido",
     grupo: "GYS 000",
-    resumen: "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+    resumen:
+      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
     drive: "https://drive.google.com/",
-    pdf: "propuesta7.pdf"
+    pdf: "propuesta7.pdf",
   },
   {
     id: 8,
     titulo: "Reconocimiento oficial a horas de voluntariado scout",
     autor: "Nombre Apellido",
     grupo: "GYS 000",
-    resumen: "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+    resumen:
+      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
     drive: "https://drive.google.com/",
-    pdf: "propuesta8.pdf"
+    pdf: "propuesta8.pdf",
   },
   {
     id: 9,
-    titulo: "Protocolo de prevención ante emergencias climáticas en campamentos",
+    titulo:
+      "Protocolo de prevención ante emergencias climáticas en campamentos",
     autor: "Nombre Apellido",
     grupo: "GYS 000",
-    resumen: "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+    resumen:
+      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
     drive: "https://drive.google.com/",
-    pdf: "propuesta9.pdf"
+    pdf: "propuesta9.pdf",
   },
   {
     id: 10,
     titulo: "Feria anual de intercambio de insignias y experiencias",
     autor: "Nombre Apellido",
     grupo: "GYS 000",
-    resumen: "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+    resumen:
+      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
     drive: "https://drive.google.com/",
-    pdf: "propuesta10.pdf"
+    pdf: "propuesta10.pdf",
   },
   {
     id: 11,
     titulo: "Observatorio juvenil de seguimiento a acuerdos del Parlamento",
     autor: "Nombre Apellido",
     grupo: "GYS 000",
-    resumen: "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+    resumen:
+      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
     drive: "https://drive.google.com/",
-    pdf: "propuesta11.pdf"
-  }
+    pdf: "propuesta11.pdf",
+  },
 ];
 
 /* ==================================================================
@@ -127,48 +140,48 @@ const propuestas = [
    No es necesario modificar nada más abajo para uso normal.
    ================================================================== */
 
-const grid              = document.getElementById("grid-propuestas");
-const sinResultados      = document.getElementById("sin-resultados");
-const buscador           = document.getElementById("buscador");
+const grid = document.getElementById("grid-propuestas");
+const sinResultados = document.getElementById("sin-resultados");
+const buscador = document.getElementById("buscador");
 const contadorResultados = document.getElementById("contador-resultados");
-const heroStatGrupos     = document.getElementById("hero-stat-grupos");
-const heroStatRevisadas  = document.getElementById("hero-stat-revisadas");
+const heroStatGrupos = document.getElementById("hero-stat-grupos");
+const heroStatRevisadas = document.getElementById("hero-stat-revisadas");
 
 const CLAVE_REVISADAS = "pj-gys-2026-revisadas";
 
 let indiceAbierto = null; // índice (dentro de "propuestas") de la tarjeta expandida
 
 /* --- Progreso de revisión guardado en el navegador de cada persona --- */
-function obtenerRevisadas(){
-  try{
+function obtenerRevisadas() {
+  try {
     return new Set(JSON.parse(localStorage.getItem(CLAVE_REVISADAS)) || []);
-  }catch(e){
+  } catch (e) {
     return new Set();
   }
 }
-function guardarRevisadas(set){
+function guardarRevisadas(set) {
   localStorage.setItem(CLAVE_REVISADAS, JSON.stringify([...set]));
 }
 let revisadas = obtenerRevisadas();
 
-function actualizarEstadisticas(){
+function actualizarEstadisticas() {
   heroStatRevisadas.textContent = revisadas.size;
-  const gruposUnicos = new Set(propuestas.map(p => p.grupo));
+  const gruposUnicos = new Set(propuestas.map((p) => p.grupo));
   heroStatGrupos.textContent = gruposUnicos.size;
 }
 
 /* --- Utilidades para evitar inyección de HTML --- */
-function escapeHTML(texto){
+function escapeHTML(texto) {
   const div = document.createElement("div");
   div.textContent = texto ?? "";
   return div.innerHTML;
 }
-function escapeAttr(texto){
+function escapeAttr(texto) {
   return (texto ?? "").replace(/"/g, "&quot;");
 }
 
 /* --- Construcción de una tarjeta --- */
-function crearTarjeta(propuesta, indice){
+function crearTarjeta(propuesta, indice) {
   const tarjeta = document.createElement("article");
   tarjeta.className = "tarjeta";
   tarjeta.dataset.indice = indice;
@@ -238,7 +251,7 @@ function crearTarjeta(propuesta, indice){
 }
 
 /* --- Renderiza el grid completo (respetando el filtro de búsqueda) --- */
-function renderizar(filtro = ""){
+function renderizar(filtro = "") {
   grid.innerHTML = "";
 
   const filtroNorm = filtro.trim().toLowerCase();
@@ -254,20 +267,21 @@ function renderizar(filtro = ""){
   });
 
   sinResultados.hidden = visibles.length !== 0;
-  contadorResultados.textContent = filtroNorm === ""
-    ? `${propuestas.length} propuestas`
-    : `${visibles.length} de ${propuestas.length} propuestas`;
+  contadorResultados.textContent =
+    filtroNorm === ""
+      ? `${propuestas.length} propuestas`
+      : `${visibles.length} de ${propuestas.length} propuestas`;
 }
 
 /* --- Abrir / cerrar tarjetas (solo una abierta a la vez) --- */
-function abrirTarjetaElemento(tarjeta){
+function abrirTarjetaElemento(tarjeta) {
   const boton = tarjeta.querySelector(".tarjeta-cabecera");
   const panel = tarjeta.querySelector(".tarjeta-panel");
   tarjeta.classList.add("abierta");
   boton.setAttribute("aria-expanded", "true");
   panel.style.maxHeight = panel.scrollHeight + "px";
 }
-function cerrarTarjetaElemento(tarjeta){
+function cerrarTarjetaElemento(tarjeta) {
   const boton = tarjeta.querySelector(".tarjeta-cabecera");
   const panel = tarjeta.querySelector(".tarjeta-panel");
   tarjeta.classList.remove("abierta");
@@ -275,18 +289,20 @@ function cerrarTarjetaElemento(tarjeta){
   panel.style.maxHeight = null;
 }
 
-function alternarTarjeta(indice){
+function alternarTarjeta(indice) {
   const tarjetaActual = grid.querySelector(`.tarjeta[data-indice="${indice}"]`);
   if (!tarjetaActual) return;
 
   const yaAbierta = indice === indiceAbierto;
 
-  if (indiceAbierto !== null){
-    const anterior = grid.querySelector(`.tarjeta[data-indice="${indiceAbierto}"]`);
+  if (indiceAbierto !== null) {
+    const anterior = grid.querySelector(
+      `.tarjeta[data-indice="${indiceAbierto}"]`,
+    );
     if (anterior) cerrarTarjetaElemento(anterior);
   }
 
-  if (yaAbierta){
+  if (yaAbierta) {
     indiceAbierto = null;
   } else {
     indiceAbierto = indice;
@@ -298,9 +314,9 @@ function alternarTarjeta(indice){
 }
 
 /* --- Navegar a la propuesta anterior/siguiente dentro del panel abierto --- */
-function irAPropuesta(indiceDestino){
+function irAPropuesta(indiceDestino) {
   if (indiceDestino < 0 || indiceDestino >= propuestas.length) return;
-  if (buscador.value.trim() !== ""){
+  if (buscador.value.trim() !== "") {
     buscador.value = "";
     renderizar();
   }
@@ -309,7 +325,7 @@ function irAPropuesta(indiceDestino){
 }
 
 /* --- Marcar una propuesta como revisada --- */
-function alternarRevisada(indice){
+function alternarRevisada(indice) {
   const propuesta = propuestas[indice];
   if (revisadas.has(propuesta.id)) revisadas.delete(propuesta.id);
   else revisadas.add(propuesta.id);
@@ -321,10 +337,13 @@ function alternarRevisada(indice){
   const marcada = revisadas.has(propuesta.id);
   tarjeta.classList.toggle("revisada", marcada);
   const botonMarcar = tarjeta.querySelector('[data-accion="marcar"]');
-  botonMarcar.textContent = marcada ? "Marcada como revisada ✓" : "Marcar como revisada";
+  botonMarcar.textContent = marcada
+    ? "Marcada como revisada ✓"
+    : "Marcar como revisada";
 
   const panel = tarjeta.querySelector(".tarjeta-panel");
-  if (tarjeta.classList.contains("abierta")) panel.style.maxHeight = panel.scrollHeight + "px";
+  if (tarjeta.classList.contains("abierta"))
+    panel.style.maxHeight = panel.scrollHeight + "px";
 }
 
 /* --- Delegación de eventos: un solo listener para todo el grid --- */
@@ -334,7 +353,7 @@ grid.addEventListener("click", (evento) => {
   const indice = Number(tarjeta.dataset.indice);
 
   const botonAccion = evento.target.closest("[data-accion]");
-  if (botonAccion){
+  if (botonAccion) {
     const accion = botonAccion.dataset.accion;
     if (accion === "marcar") alternarRevisada(indice);
     if (accion === "anterior") irAPropuesta(indice - 1);
@@ -353,7 +372,7 @@ buscador.addEventListener("input", () => {
 });
 
 /* --- Inicialización --- */
-(function iniciar(){
+(function iniciar() {
   renderizar();
   actualizarEstadisticas();
 })();
