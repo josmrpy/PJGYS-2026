@@ -55,6 +55,12 @@
   --transicion: 160ms ease;
 }
 
+/* Target all links inside a paragraph */
+p a {
+  color: #ed1a39;         /* Changes the text color (Hex or name) */
+  text-decoration: none;  /* Optional: Removes the default underline */
+}
+
 /* ==================================================================
    2. BASE
    ================================================================== */
