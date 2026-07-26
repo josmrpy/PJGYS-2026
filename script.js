@@ -23,20 +23,20 @@
 const propuestas = [
   {
     id: 1,
-    titulo: "nombre de propuesta",
+    titulo: "Ley: Educación ambiental y bioalfabetización en Costa Rica",
     autor: "Aaron José Torres Ríos",
     grupo: "Guanacaste #000",
     resumen:
-      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+      "Esta propuesta tiene como objetivo fortalecer la conciencia ecológica y el uso sostenible de la biodiversidad mediante la creación de programas nacionales gratuitos de educación ambiental y bioalfabetización. Su alcance abarca la formación integral en todas las etapas educativas y prioritariamente en comunidades aledañas a áreas protegidas, promoviendo la prevención del tráfico ilegal de fauna, la adopción de tecnologías sostenibles y la conservación comunitaria a nivel país.",
     drive:
       "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
-    pdf: "propuesta1.pdf",
+    pdf: "https://drive.google.com/file/d/1qAjf0qsQrwqLzdesf1XsayaFw9-_r6YD/preview",
   },
   {
     id: 2,
     titulo: "nombre de propuesta",
     autor: "Gabriel Madrigal Aguilar",
-    grupo: "Cartago #000",
+    grupo: "Cartago #314",
     resumen:
       "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
     drive:
@@ -45,25 +45,27 @@ const propuestas = [
   },
   {
     id: 3,
-    titulo: "nombre de propuesta",
+    titulo:
+      "Proyecto de Ley para la Implementación de la Economía Circular en los Centros Educativos públicos",
     autor: "Hannah Sánchez Barquero",
     grupo: "Heredia #000",
     resumen:
-      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+      "Esta propuesta tiene como objetivo obligar e institucionalizar el modelo de economía circular en todos los centros educativos públicos mediante comités institucionales de separación, recolección y compostaje. Su alcance abarca la capacitación comunitaria, la alianza con gestores locales y la creación de un fondo verde auto-gestionado con los ingresos del reciclaje para financiar mejoras de infraestructura, proyectos estudiantiles y becas académicas.",
     drive:
       "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
-    pdf: "propuesta3.pdf",
+    pdf: "https://drive.google.com/file/d/1OswRn61Km61gDnrfFSrxCrkNfFKNuBEJ/preview",
   },
   {
     id: 4,
-    titulo: "nombre de propuesta",
+    titulo:
+      "La Importancia del Sistema de Alimentación Integral en la Comunidad Estudiantil Costarricense",
     autor: "Isabella Rojas Céspedes",
     grupo: "Heredia #000",
     resumen:
-      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+      "Esta propuesta tiene como objetivo garantizar la calidad, inocuidad y valor nutricional de los alimentos brindados por el PANEA para proteger el bienestar y rendimiento de la comunidad estudiantil. Su alcance abarca la creación de un sistema nacional de evaluación participativa cuatrimestral en los centros educativos, la obligatoriedad de estándares sanitarios para proveedores y la facultad del MEP para rescindir contratos ante incumplimientos reiterados.",
     drive:
       "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
-    pdf: "propuesta4.pdf",
+    pdf: "https://drive.google.com/file/d/1t_13e8Gluj0FIzuK7bpF2xRCOFKKbisT/preview",
   },
   {
     id: 5,
@@ -78,14 +80,15 @@ const propuestas = [
   },
   {
     id: 6,
-    titulo: "nombre de propuesta",
+    titulo:
+      "Ley para la promoción de la Accesibilidad Comunicativa en Espacios y Servicios Públicos de Costa Rica",
     autor: "Josimar Madrigal Espinoza",
     grupo: "Limón #144",
     resumen:
-      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+      "Esta propuesta de ley tiene como objetivo impulsar la incorporación progresiva de recursos visuales, pictogramas, señalización accesible y formatos de lectura fácil en los entornos y servicios públicos de Costa Rica. Su alcance abarca la creación de lineamientos nacionales liderados por el CONAPDIS para su implementación en instituciones públicas, centros educativos, hospitales, sistemas de transporte y espacios de uso público, promoviendo la autonomía de la ciudadanía.",
     drive:
       "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
-    pdf: "propuesta6.pdf",
+    pdf: "https://drive.google.com/file/d/1AvVkbEFIIXZkgVIBXhDue0wSToil06uR/preview",
   },
   {
     id: 7,
@@ -100,47 +103,49 @@ const propuestas = [
   },
   {
     id: 8,
-    titulo: "nombre de propuesta",
+    titulo: "Proyecto de Ley para la Creación del Sistema Nacional de Prospectiva Estratégica, coordinado por una agencia técnica adscrita a MIDEPLAN con autonomía funcional.",
     autor: "María Isabel Araya Díaz",
-    grupo: "Alajuela #000",
+    grupo: "Alajuela #14",
     resumen:
-      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+      "Esta propuesta busca institucionalizar la planificación pública de largo plazo mediante la creación del Sistema Nacional de Prospectiva Estratégica, coordinado por una agencia técnica adscrita a MIDEPLAN. Su alcance abarca la elaboración de estrategias quinquenales, la evaluación de riesgos futuros, el monitoreo de tendencias globales y el análisis prospectivo en proyectos legislativos clave para fortalecer la gobernanza anticipatoria en Costa Rica.",
     drive:
       "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
-    pdf: "propuesta8.pdf",
+    pdf: "https://drive.google.com/file/d/1ftcU3SVRUms1JGv4aAIJPXTfu2-DbyMQ/preview",
   },
   {
     id: 9,
-    titulo: "nombre de propuesta",
+    titulo: "Propuesta para parlamento juvenil guía y scout",
     autor: "María José Zúñiga Loría",
     grupo: "Limón #000",
     resumen:
-      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+      "Esta propuesta tiene como objetivo mejorar la inclusión educativa mediante la concientización sobre la neurodivergencia y la atención de los diferentes estilos de aprendizaje. Su alcance abarca la creación de un marco legal para capacitar obligatoriamente al personal docente y de orientación mediante profesionales en psicología de la CCSS, implementándose de forma gradual desde la GAM hacia las zonas periféricas para promover diagnósticos tempranos, combatir la automedicación e incentivar la empatía en el aula.",
     drive:
       "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
-    pdf: "propuesta9.pdf",
+    pdf: "https://docs.google.com/document/d/1ob1K78N87bLecjCCQKc5W2JODqsKky1a/preview",
   },
   {
     id: 10,
-    titulo: "nombre de propuesta",
+    titulo:
+      "Ley para la Prevención Integral de la criminalidad mediante el fortalecimiento de la cultura de la paz, la identidad cultural y la participación ciudadana.",
     autor: "Nathalie Espinoza Retana",
-    grupo: "Cartago #000",
+    grupo: "Cartago #57",
     resumen:
-      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+      "Esta propuesta tiene como objetivo prevenir la criminalidad y reconstruir el tejido social mediante una estrategia integral enfocada en la niñez y juventud. Su alcance abarca la implementación de educación preventiva en valores y resolución pacífica de conflictos, el fortalecimiento de la identidad cultural y la creación de espacios comunitarios y artísticos que promuevan la convivencia pacífica y reduzcan los factores de riesgo en todo el país.",
     drive:
       "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
-    pdf: "propuesta10.pdf",
+    pdf: "https://docs.google.com/document/d/1lGOThRAVNhs_Vp00dmo7gfVM-oM3Re36/preview",
   },
   {
     id: 11,
-    titulo: "nombre de propuesta",
+    titulo:
+      "Ley para la Promoción de la Participación Cívica y la Inserción Laboral de las Personas Jóvenes",
     autor: "Sebastián Felipe Badilla Groves",
     grupo: "San José #000",
     resumen:
-      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+      "Esta propuesta tiene como objetivo promover la participación cívica y la inserción laboral de las personas jóvenes mediante la creación de presupuestos participativos municipales vinculantes. Su alcance abarca la asignación obligatoria de al menos un 3% del presupuesto de inversión local a proyectos diseñados y votados por jóvenes de 15 a 24 años mediante plataformas digitales, la mentoría técnica con Trabajo Comunal Universitario y la emisión de certificaciones oficiales de Primera Experiencia Laboral para quienes lideren su ejecución.",
     drive:
       "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
-    pdf: "propuesta11.pdf",
+    pdf: "https://drive.google.com/file/d/1e82iL8bYbTQcyt1AUWrB_NaRBTtOWccG/preview",
   },
 ];
 
