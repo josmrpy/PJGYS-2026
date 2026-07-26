@@ -25,7 +25,7 @@ const propuestas = [
     id: 1,
     titulo: "Ley: Educación ambiental y bioalfabetización en Costa Rica",
     autor: "Aaron José Torres Ríos",
-    grupo: "Guanacaste #000",
+    grupo: "Guanacaste #257",
     resumen:
       "Esta propuesta tiene como objetivo fortalecer la conciencia ecológica y el uso sostenible de la biodiversidad mediante la creación de programas nacionales gratuitos de educación ambiental y bioalfabetización. Su alcance abarca la formación integral en todas las etapas educativas y prioritariamente en comunidades aledañas a áreas protegidas, promoviendo la prevención del tráfico ilegal de fauna, la adopción de tecnologías sostenibles y la conservación comunitaria a nivel país.",
     drive:
@@ -34,14 +34,14 @@ const propuestas = [
   },
   {
     id: 2,
-    titulo: "nombre de propuesta",
+    titulo: "Ley para la Mejora del Transporte Público en Costa Rica",
     autor: "Gabriel Madrigal Aguilar",
     grupo: "Cartago #314",
     resumen:
-      "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
+      "Esta propuesta tiene como objetivo garantizar un transporte público seguro, eficiente y digno mediante la creación del Sistema Nacional de Fiscalización Permanente del Transporte Público Concesionado. Su alcance abarca la realización de inspecciones periódicas y sorpresivas para verificar el estado mecánico, cumplimiento de horarios, accesibilidad y calidad del servicio, priorizando las rutas más problemáticas y publicando los resultados de manera transparente para prevenir accidentes.",
     drive:
       "https://drive.google.com/drive/folders/1_--jEkB4P-6aOHF4qL7XtvG8WmpS_S9b?usp=drive_link",
-    pdf: "propuesta2.pdf",
+    pdf: "https://drive.google.com/file/d/1AAZXDyC9FQjHEMNwPsAZRIVkAIxeLjcR/preview",
   },
   {
     id: 3,
@@ -71,7 +71,7 @@ const propuestas = [
     id: 5,
     titulo: "nombre de propuesta",
     autor: "José Ivankovich Solano",
-    grupo: "Cartago #000",
+    grupo: "Cartago #54",
     resumen:
       "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
     drive:
@@ -93,8 +93,8 @@ const propuestas = [
   {
     id: 7,
     titulo: "nombre de propuesta",
-    autor: "Mari Corella Castro",
-    grupo: "San José #000",
+    autor: "Mariam Corella Castro",
+    grupo: "San José #42",
     resumen:
       "Texto de ejemplo. Sustituye este resumen por una descripción breve (2-4 líneas) del objetivo y alcance de la propuesta.",
     drive:
@@ -103,7 +103,8 @@ const propuestas = [
   },
   {
     id: 8,
-    titulo: "Proyecto de Ley para la Creación del Sistema Nacional de Prospectiva Estratégica, coordinado por una agencia técnica adscrita a MIDEPLAN con autonomía funcional.",
+    titulo:
+      "Proyecto de Ley para la Creación del Sistema Nacional de Prospectiva Estratégica, coordinado por una agencia técnica adscrita a MIDEPLAN con autonomía funcional.",
     autor: "María Isabel Araya Díaz",
     grupo: "Alajuela #14",
     resumen:
@@ -116,7 +117,7 @@ const propuestas = [
     id: 9,
     titulo: "Propuesta para parlamento juvenil guía y scout",
     autor: "María José Zúñiga Loría",
-    grupo: "Limón #000",
+    grupo: "Limón #28",
     resumen:
       "Esta propuesta tiene como objetivo mejorar la inclusión educativa mediante la concientización sobre la neurodivergencia y la atención de los diferentes estilos de aprendizaje. Su alcance abarca la creación de un marco legal para capacitar obligatoriamente al personal docente y de orientación mediante profesionales en psicología de la CCSS, implementándose de forma gradual desde la GAM hacia las zonas periféricas para promover diagnósticos tempranos, combatir la automedicación e incentivar la empatía en el aula.",
     drive:
@@ -138,7 +139,7 @@ const propuestas = [
   {
     id: 11,
     titulo:
-      "Ley para la Promoción de la Participación Cívica y la Inserción Laboral de las Personas Jóvenes",
+      "LEY DE PRESUPUESTOS PARTICIPATIVOS JUVENILES Y ACREDITACIÓN DE PRIMERA EXPERIENCIA",
     autor: "Sebastián Felipe Badilla Groves",
     grupo: "San José #000",
     resumen:
