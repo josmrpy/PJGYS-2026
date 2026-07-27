@@ -7,6 +7,7 @@
      2. BASE
      3. BARRA SUPERIOR
      4. HERO
+     4.5 RESULTADO DE LA VOTACIÓN
      5. BARRA DE HERRAMIENTAS (buscador)
      6. GRID Y TARJETAS DE PROPUESTAS
      7. PIE DE PÁGINA
@@ -299,6 +300,58 @@ h3 {
   object-fit: cover;
   border-radius: var(--radio-m);
   display: block;
+}
+
+/* ==================================================================
+   4.5 RESULTADO DE LA VOTACIÓN
+   ------------------------------------------------------------------
+   Banner que anuncia la propuesta electa. Va entre el hero y la
+   barra de herramientas. Para editar el texto, ve a index.html →
+   <section class="resultado-votacion">.
+   ================================================================== */
+.resultado-votacion {
+  background: var(--azul);
+}
+.resultado-votacion-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.resultado-insignia {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  background: var(--rojo);
+  color: var(--blanco);
+  font-family: var(--fuente-titulo);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.resultado-texto {
+  margin: 0;
+  flex: 1 1 320px;
+  color: var(--blanco);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.resultado-texto strong {
+  font-weight: 800;
+}
+.resultado-texto em {
+  font-style: italic;
+}
+.resultado-boton {
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 /* ==================================================================

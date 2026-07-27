@@ -141,7 +141,7 @@ const propuestas = [
     titulo:
       "LEY DE PRESUPUESTOS PARTICIPATIVOS JUVENILES Y ACREDITACIÓN DE PRIMERA EXPERIENCIA",
     autor: "Sebastián Felipe Badilla Groves",
-    grupo: "San José #000",
+    grupo: "San José #100",
     resumen:
       "Esta propuesta tiene como objetivo promover la participación cívica y la inserción laboral de las personas jóvenes mediante la creación de presupuestos participativos municipales vinculantes. Su alcance abarca la asignación obligatoria de al menos un 3% del presupuesto de inversión local a proyectos diseñados y votados por jóvenes de 15 a 24 años mediante plataformas digitales, la mentoría técnica con Trabajo Comunal Universitario y la emisión de certificaciones oficiales de Primera Experiencia Laboral para quienes lideren su ejecución.",
     drive:
@@ -384,6 +384,18 @@ grid.addEventListener("click", (evento) => {
 buscador.addEventListener("input", () => {
   indiceAbierto = null;
   renderizar(buscador.value);
+});
+
+/* --- Banner de "Resultado de la votación": abre la propuesta electa --- */
+document.querySelectorAll("[data-abrir-propuesta]").forEach((elemento) => {
+  elemento.addEventListener("click", () => {
+    const idObjetivo = Number(elemento.dataset.abrirPropuesta);
+    const indice = propuestas.findIndex((p) => p.id === idObjetivo);
+    if (indice === -1) return;
+    // Se espera a que termine el scroll hacia #propuestas antes de abrir
+    // la tarjeta, para que la animación de apertura se vea completa.
+    setTimeout(() => alternarTarjeta(indice), 350);
+  });
 });
 
 /* --- Inicialización --- */
