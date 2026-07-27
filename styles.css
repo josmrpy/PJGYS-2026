@@ -420,6 +420,15 @@ h3 {
   padding: 44px 28px 80px;
 }
 
+.fracc-logo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 999;
+}
+
 .grid-propuestas {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
