@@ -644,7 +644,11 @@ h3 {
   color: var(--rojo);
 }
 
-/* --- Visor de documento --- */
+/* --- Visor de documento ---
+   El visor es un iframe que carga el viewer.html de pdf.js (con su
+   propia barra de herramientas y canvas internos). Este bloque solo
+   controla el ESPACIO/CONTENEDOR que le damos en la página — no el
+   layout interno del visor, que vive en su propio documento. */
 .detalle-visor {
   border: 1px solid var(--borde);
   border-radius: var(--radio-m);
@@ -750,8 +754,35 @@ h3 {
   .hero-stats {
     gap: 20px;
   }
-  .detalle-visor iframe {
-    height: 340px;
+
+  /* --- Visor pdf.js en mobile ---
+     Antes: el selector real era ".detalle-visor iframe" (no existía,
+     el iframe está dentro de .visor-contenido) y el alto quedaba fijo
+     en 500px, lo que hacía que el visor se viera cortado o con mucho
+     scroll interno en pantallas chicas.
+     Ahora: usamos el selector correcto y una altura basada en vh con
+     un tope, para que el contenedor se ajuste al espacio real de la
+     pantalla en vez de un valor fijo pensado para escritorio. */
+  .visor-contenido,
+  .visor-placeholder {
+    min-height: 60vh;
+  }
+  .visor-contenido iframe,
+  .visor-contenido video {
+    height: 60vh;
+    max-height: 480px;
+  }
+
+  .detalle-visor {
+    border-radius: var(--radio-s);
+  }
+
+  .detalle-acciones {
+    flex-direction: column;
+  }
+  .detalle-acciones .boton {
+    width: 100%;
+    justify-content: center;
   }
 }
 
