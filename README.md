@@ -1,102 +1,77 @@
-# Propuestas Legislativas — Parlamento Joven Guía y Scout Costa Rica 2026
+# Propuestas Legislativas · Parlamento Joven Guía y Scout Costa Rica 2026
 
-Sitio estático (HTML + CSS + JS puro, sin frameworks ni build) para consultar, leer y comparar las 11 propuestas antes del proceso de deliberación. Diseño institucional simple: sin degradados, sin animaciones decorativas, sin ilustraciones — pensado para verse como una herramienta real de una organización, no como una plantilla.
+Repositorio del sitio de consulta y análisis de las propuestas legislativas presentadas por la fracción legislativa del Parlamento Joven Guía y Scout Costa Rica 2026.
 
-## Archivos del proyecto
+## Descripción
 
-```
-├── index.html   → estructura: barra superior, hero, buscador, listado
-├── styles.css   → todo el sistema visual (colores, tipografía, tarjetas)
-├── script.js    → datos de las propuestas + toda la lógica del sitio
-├── README.md    → este archivo
-└── (aquí van tus PDFs e imágenes: propuesta1.pdf, hero.jpg, ...)
-```
+Este proyecto es una página web estática que muestra un listado de propuestas legislativas con:
 
-Cada archivo trae comentarios en el propio código señalando exactamente qué editar. Esta guía es un resumen de esos mismos puntos.
+- títulos, autores y grupos de origen
+- resúmenes breves
+- acceso directo a documentos en Google Drive
+- visor integrado de archivos PDF/Google Docs
+- buscador en la interfaz
+- marcador de progreso personal en el navegador
 
-## 1. Dónde modificar los textos generales
+El contenido principal se gestiona desde `script.js`, donde se define el arreglo de propuestas.
 
-Todo el texto que no son propuestas (título del hero, subtítulo, descripción, nombre del sitio en la barra superior, textos del footer) está directamente en `index.html`, en español y sin abreviaturas técnicas. Búscalo por sección:
+## Estructura del proyecto
 
-- Barra superior → `<div class="topbar">`
-- Hero (título, subtítulo, descripción, botones) → `<section class="hero">`
-- Pie de página → `<footer class="site-footer">`
+- `index.html` — Página principal del sitio.
+- `styles.css` — Estilos y diseño responsive.
+- `script.js` — Datos de las propuestas y lógica interactiva.
+- `logo.png` — Logo institucional.
+- `hero.jpg` — Imagen hero opcional para la portada.
+- `README.md` — Documentación del proyecto.
 
-## 2. Dónde modificar las propuestas
+## Cómo usar
 
-Todo vive en **un solo arreglo** llamado `propuestas`, al inicio de `script.js`:
+1. Abre `index.html` en el navegador para ver la página.
+2. Utiliza el campo de búsqueda para filtrar propuestas por título.
+3. Haz clic en cada tarjeta para expandirla y ver más detalles.
+4. Abre el documento en Drive o visualízalo directamente desde la tarjeta.
+5. Marca las propuestas revisadas; el progreso se guarda en el navegador.
+
+## Cómo actualizar las propuestas
+
+Para agregar o editar propuestas, modifica el arreglo `propuestas` en `script.js`.
+
+Cada objeto de propuesta incluye:
+
+- `id` — número de propuesta.
+- `titulo` — nombre completo de la iniciativa.
+- `autor` — persona que la presenta.
+- `grupo` — Grupo Guía y Scout.
+- `resumen` — descripción corta de 2-4 líneas.
+- `drive` — enlace a la carpeta o documento en Google Drive.
+- `pdf` — enlace público a PDF o Google Docs.
+
+Ejemplo:
 
 ```js
 {
   id: 1,
-  titulo:  "Nombre real de la propuesta",
-  autor:   "Nombre Apellido",
-  grupo:   "GYS 144",
-  resumen: "Resumen corto de 2 a 4 líneas.",
-  drive:   "https://drive.google.com/file/d/XXXXX/view",
-  pdf:     "propuesta1.pdf"
+  titulo: "Ley: Educación ambiental y bioalfabetización en Costa Rica",
+  autor: "Aaron José Torres Ríos",
+  grupo: "Guanacaste #257",
+  resumen: "Esta propuesta tiene como objetivo fortalecer la conciencia ecológica...",
+  drive: "https://drive.google.com/...",
+  pdf: "https://drive.google.com/file/d/.../preview",
 }
 ```
 
-Abre `script.js`, ubica el bloque correspondiente (van del 1 al 11) y reemplaza `titulo`, `autor`, `grupo`, `resumen`, `drive` y `pdf`. No necesitas tocar `index.html` ni `styles.css`: el listado completo se regenera solo a partir de este arreglo.
+> Nota: si usas un archivo `hero.jpg`, colócalo en la raíz del proyecto y asegúrate de usar la etiqueta `<img>` en `index.html` como se comenta en el código.
 
-**Para agregar o quitar propuestas**: copia o borra un bloque `{ ... }` completo dentro del arreglo. El contador, las estadísticas del hero y la navegación "Anterior/Siguiente" se ajustan automáticamente — no hay ningún número escrito "a mano" en el resto del código.
+## Personalización rápida
 
-## 3. Dónde colocar imágenes
+- Cambia el título y la descripción en `index.html`.
+- Ajusta colores y tipografía en `styles.css`.
+- Si no quieres depender de Google Fonts, elimina el bloque `<link>` de `index.html` y se usarán las fuentes del sistema.
 
-El sitio no trae ninguna imagen de ejemplo descargada de internet; en su lugar hay **contenedores reservados y documentados**, listos para recibir contenido real:
+## Requisitos
 
-### Imagen del hero
-En `index.html`, dentro de `<section class="hero">`, verás un bloque `<div class="hero-imagen-marcador">` con un comentario explicativo justo encima. Para activarlo:
-1. Coloca tu imagen (por ejemplo `hero.jpg`) en la misma carpeta que `index.html`.
-2. Reemplaza el `<div class="hero-imagen-marcador">...</div>` completo por:
-   ```html
-   <img src="hero.jpg" alt="Descripción de la imagen" class="hero-imagen">
-   ```
-El tamaño y las proporciones ya están definidos en `styles.css` (busca `.hero-imagen`), así que la imagen se ajustará automáticamente.
+No necesitas servidor ni compilación; basta con abrir `index.html` en el navegador.
 
-### Logo en la barra superior (opcional)
-En `index.html`, dentro de `<div class="topbar">`, hay un comentario que explica cómo reemplazar el texto por un `<img>` con el logo oficial, si la organización decide usar uno.
+## Autor
 
-## 4. Dónde modificar los colores
-
-Todos los colores institucionales están definidos **una sola vez**, como variables, al inicio de `styles.css` (sección `1. COLORES Y TIPOGRAFÍA`):
-
-```css
---azul:   #2C1261;   /* encabezados, botones principales, footer */
---rojo:   #ED1A39;   /* acentos e indicadores — usar con moderación */
-```
-
-Si en algún momento cambian los colores institucionales, basta con editar estos valores hexadecimales: se actualizan en todo el sitio automáticamente. No hay colores "sueltos" escritos en otras partes del archivo.
-
-## 5. Dónde modificar la tipografía
-
-También como variables, en la misma sección de `styles.css`:
-
-```css
---fuente-titulo: "Montserrat", ...;   /* títulos y botones */
---fuente-texto:   "Nunito", ...;      /* párrafos y contenido */
-```
-
-Ambas se cargan desde Google Fonts en `index.html`. Si prefieres no depender de una conexión externa, borra ese bloque `<link>`: el sitio usará automáticamente tipografías del sistema ya definidas como respaldo.
-
-## Funcionalidades incluidas
-
-- **Listado de tarjetas** con expansión en el mismo lugar: al hacer clic en una propuesta se abre suavemente ocupando todo el ancho; si abres otra, la anterior se cierra sola. No se navega a otra página.
-- **Buscador por título** en tiempo real, con contador de resultados.
-- **Botón "Marcar como revisada"** dentro de cada propuesta — el progreso se guarda en el navegador de cada persona y se refleja en "Revisadas por ti" del hero. La insignia de la tarjeta muestra un indicador cuando ya fue revisada.
-- **Navegación "Anterior / Siguiente"** dentro de cada propuesta abierta.
-- **Interacciones discretas**: el único movimiento del sitio es la apertura/cierre de una propuesta. Los botones y tarjetas solo cambian de color o sombra muy sutil al pasar el cursor — sin desplazamientos, sin efectos decorativos.
-- **Totalmente responsive**, y respeta la preferencia de "reducir movimiento" del sistema operativo.
-
-## Cómo publicarlo en GitHub Pages
-
-1. Crea un repositorio nuevo en GitHub.
-2. Sube `index.html`, `styles.css`, `script.js`, tus PDFs y tu imagen del hero a la raíz del repositorio.
-3. Ve a **Settings → Pages**.
-4. En **"Build and deployment"** elige **"Deploy from a branch"**, rama `main`, carpeta `/ (root)`.
-5. En un par de minutos tendrás una URL del estilo:
-   `https://tu-usuario.github.io/nombre-del-repositorio/`
-
----
-Desarrollado por Josimar Madrigal (@josmr.py) · Grupo Guía y Scout 144
+Desarrollado por Josimar Madrigal (`@josmr.py`) · Grupo Guía y Scout 144
