@@ -1,77 +1,61 @@
 # Propuestas Legislativas · Parlamento Joven Guía y Scout Costa Rica 2026
 
-Repositorio del sitio de consulta y análisis de las propuestas legislativas presentadas por la fracción legislativa del Parlamento Joven Guía y Scout Costa Rica 2026.
+Repositorio del sitio web creado para la consulta, organización y seguimiento de las propuestas legislativas presentadas durante el Parlamento Joven Guía y Scout Costa Rica 2026.
 
-## Descripción
+## Sobre el proyecto
 
-Este proyecto es una página web estática que muestra un listado de propuestas legislativas con:
+Este sitio funciona como un espacio centralizado para reunir las propuestas de la fracción legislativa, permitiendo consultar información básica de cada iniciativa y acceder a sus documentos de trabajo.
 
-- títulos, autores y grupos de origen
-- resúmenes breves
-- acceso directo a documentos en Google Drive
-- visor integrado de archivos PDF/Google Docs
-- buscador en la interfaz
-- marcador de progreso personal en el navegador
+La página incluye:
 
-El contenido principal se gestiona desde `script.js`, donde se define el arreglo de propuestas.
+* listado organizado de propuestas legislativas
+* información de autores y grupos de origen
+* resúmenes de cada iniciativa
+* acceso a documentos de referencia
+* visor integrado de documentos
+* buscador de propuestas
+* sistema de seguimiento de progreso guardado localmente en el navegador
 
-## Estructura del proyecto
+## Estructura
 
-- `index.html` — Página principal del sitio.
-- `styles.css` — Estilos y diseño responsive.
-- `script.js` — Datos de las propuestas y lógica interactiva.
-- `logo.png` — Logo institucional.
-- `hero.jpg` — Imagen hero opcional para la portada.
-- `README.md` — Documentación del proyecto.
+* `index.html` — Estructura principal del sitio.
+* `styles.css` — Diseño visual y estilos responsive.
+* `script.js` — Contiene la información de las propuestas y la lógica de interacción.
+* `logo.png` — Elemento gráfico institucional.
+* `hero.jpg` — Imagen opcional para la portada.
 
-## Cómo usar
+## Gestión de propuestas
 
-1. Abre `index.html` en el navegador para ver la página.
-2. Utiliza el campo de búsqueda para filtrar propuestas por título.
-3. Haz clic en cada tarjeta para expandirla y ver más detalles.
-4. Abre el documento en Drive o visualízalo directamente desde la tarjeta.
-5. Marca las propuestas revisadas; el progreso se guarda en el navegador.
+Las propuestas se administran desde el archivo `script.js` mediante el arreglo `propuestas`.
 
-## Cómo actualizar las propuestas
+Cada propuesta contiene información como:
 
-Para agregar o editar propuestas, modifica el arreglo `propuestas` en `script.js`.
+* identificador
+* título de la iniciativa
+* autor
+* grupo Guía y Scout de origen
+* resumen
+* enlaces a documentos de trabajo
 
-Cada objeto de propuesta incluye:
-
-- `id` — número de propuesta.
-- `titulo` — nombre completo de la iniciativa.
-- `autor` — persona que la presenta.
-- `grupo` — Grupo Guía y Scout.
-- `resumen` — descripción corta de 2-4 líneas.
-- `drive` — enlace a la carpeta o documento en Google Drive.
-- `pdf` — enlace público a PDF o Google Docs.
-
-Ejemplo:
+Ejemplo de estructura:
 
 ```js
 {
   id: 1,
-  titulo: "Ley: Educación ambiental y bioalfabetización en Costa Rica",
-  autor: "Aaron José Torres Ríos",
-  grupo: "Guanacaste #257",
-  resumen: "Esta propuesta tiene como objetivo fortalecer la conciencia ecológica...",
-  drive: "https://drive.google.com/...",
-  pdf: "https://drive.google.com/file/d/.../preview",
+  titulo: "Ley de accesibilidad comunicativa",
+  autor: "Nombre del autor",
+  grupo: "Grupo Guía y Scout",
+  resumen: "Descripción breve de la propuesta.",
+  drive: "Enlace al documento",
+  pdf: "Enlace al visor del documento"
 }
 ```
 
-> Nota: si usas un archivo `hero.jpg`, colócalo en la raíz del proyecto y asegúrate de usar la etiqueta `<img>` en `index.html` como se comenta en el código.
+## Propósito
 
-## Personalización rápida
-
-- Cambia el título y la descripción en `index.html`.
-- Ajusta colores y tipografía en `styles.css`.
-- Si no quieres depender de Google Fonts, elimina el bloque `<link>` de `index.html` y se usarán las fuentes del sistema.
-
-## Requisitos
-
-No necesitas servidor ni compilación; basta con abrir `index.html` en el navegador.
+El proyecto busca facilitar la organización del trabajo legislativo dentro del Parlamento Joven, creando un espacio donde las propuestas puedan consultarse, revisarse y mantenerse como registro de la experiencia.
 
 ## Autor
 
-Desarrollado por Josimar Madrigal (`@josmr.py`) · Grupo Guía y Scout 144
+Desarrollado por Josimar Madrigal (`@josmr.py`)
+Grupo Guía y Scout 144
