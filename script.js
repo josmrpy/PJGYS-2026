@@ -66,7 +66,7 @@ const propuestas = [
     titulo:
       "Proyecto de Ley para la Implementación de la Economía Circular en los Centros Educativos públicos",
     autor: "Hannah Sánchez Barquero",
-    grupo: "Heredia #000",
+    grupo: "Heredia #61",
     resumen:
       "Esta propuesta tiene como objetivo obligar e institucionalizar el modelo de economía circular en todos los centros educativos públicos mediante comités institucionales de separación, recolección y compostaje. Su alcance abarca la capacitación comunitaria, la alianza con gestores locales y la creación de un fondo verde auto-gestionado con los ingresos del reciclaje para financiar mejoras de infraestructura, proyectos estudiantiles y becas académicas.",
     drive:
