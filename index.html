@@ -1,226 +1,225 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Propuestas Legislativas · Parlamento Joven Guía y Scout Costa Rica 2026
-    </title>
-    <meta
-      name="description"
-      content="Repositorio de consulta y análisis de las propuestas legislativas del Parlamento Joven Guía y Scout Costa Rica 2026."
-    />
 
-    <!-- Tipografía: Montserrat (títulos) + Nunito (texto).
-     Si prefieres no depender de Google Fonts, borra este bloque
-     <link> y el sitio usará las tipografías del sistema definidas
-     como respaldo en styles.css. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Propuestas Legislativas · Parlamento Joven Guía y Scout Costa Rica 2026
+  </title>
+  <meta name="description"
+    content="Repositorio de consulta y análisis de las propuestas legislativas del Parlamento Joven Guía y Scout Costa Rica 2026." />
 
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+  <!-- Tipografía: Montserrat para títulos, Nunito para texto.
+         Si prefieres no depender de Google Fonts, borra este bloque
+         <link> y el sitio usará las tipografías de respaldo del
+         sistema, definidas en styles.css. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
 
-  <body>
-    <!-- Logo de la fracción -->
-    <img src="logo_fraccion_circular.png" alt="" class="fracc-logo" height="112px" />
+  <link rel="stylesheet" href="styles.css" />
 
-    <a class="skip-link" href="#propuestas">Saltar al listado de propuestas</a>
+  <!-- Favicon: coloca aquí tu archivo "favicon.ico" (32×32 px), en
+         esta misma carpeta. Es el ícono que aparece en la pestaña del
+         navegador. Si prefieres un PNG, cambia type="image/x-icon"
+         por type="image/png" y el href por el nombre de tu archivo
+         (por ejemplo "favicon.png"). -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="32x32" />
+</head>
 
-    <!-- ============================================================
+<body>
+  <!-- Logo flotante, siempre visible en la esquina inferior
+         izquierda: usa el mismo favicon.ico como marca de agua y
+         enlaza a la página principal al hacer clic. Para moverlo,
+         cambia "bottom"/"left" por "top"/"right"; para ajustar qué
+         tan visible es, cambia la opacidad en el atributo style
+         del <img>. -->
+  <a href="https://josmrpy.github.io" aria-label="Ir a la página principal" style="
+        position: fixed;
+        bottom: 16px;
+        left: 16px;
+        z-index: 999;
+        display: block;
+        line-height: 0;
+      ">
+    <img src="favicon.ico" alt="Ir a la página principal" width="32" height="32"
+      style="opacity: 0.35; transition: opacity 0.2s" onmouseover="this.style.opacity = '0.8'"
+      onmouseout="this.style.opacity = '0.35'" />
+  </a>
+
+  <!-- Enlace de accesibilidad: invisible hasta que se navega con
+         teclado (Tab), para saltar directo al listado -->
+  <a class="skip-link" href="#propuestas">Saltar al listado de propuestas</a>
+
+  <!-- ============================================================
      BARRA SUPERIOR
      ============================================================ -->
-    <div class="topbar">
-      <div class="topbar-inner">
-        <!-- Logo oficial -->
-        <img
-          src="logo.png"
-          alt="Parlamento Joven Guía y Scout Costa Rica"
-          class="topbar-logo"
-          height="28"
-        />
+  <div class="topbar">
+    <div class="topbar-inner">
+      <!-- Logo oficial -->
+      <img src="logo_gys.png" alt="Parlamento Joven Guía y Scout Costa Rica" class="topbar-logo" height="28" />
 
-        <span class="topbar-tag">Repositorio de propuestas</span>
-      </div>
+      <span class="topbar-tag">Repositorio de propuestas</span>
     </div>
+  </div>
 
-    <!-- ============================================================
+  <!-- ============================================================
      HERO
-     Sección introductoria simple: título, subtítulo, descripción
-     y un espacio reservado para una imagen institucional.
+     Sección introductoria: título, subtítulo, descripción y una
+     imagen institucional a un lado.
      ============================================================ -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-texto">
-          <p class="hero-eyebrow">Fracción legislativa · Consulta ciudadana</p>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-texto">
+        <p class="hero-eyebrow">Fracción legislativa · Consulta ciudadana</p>
 
-          <!-- TEXTO DEL HERO: edita título, subtítulo y descripción aquí -->
-          <h1>Propuestas Legislativas</h1>
-          <p class="hero-subtitulo">
-            Consulta y análisis de las iniciativas presentadas por la fracción
-            legislativa #4.
-          </p>
-          <p class="hero-desc">
-            Explora, lee y compara las propuestas presentadas por los
-            integrantes de la Fracción Legislativa. Este espacio reúne toda la
-            documentación necesaria para facilitar el análisis y la selección de
-            la iniciativa que representará a la fracción.
-          </p>
+        <!-- Título, subtítulo y descripción del hero: edítalos aquí -->
+        <h1>Propuestas Legislativas</h1>
+        <p class="hero-subtitulo">
+          Consulta y análisis de las iniciativas presentadas por la fracción
+          legislativa #4.
+        </p>
+        <p class="hero-desc">
+          Explora, lee y compara las propuestas presentadas por los
+          integrantes de la Fracción Legislativa. Este espacio reúne toda la
+          documentación necesaria para facilitar el análisis y la selección de
+          la iniciativa que representará a la fracción.
+        </p>
 
-          <div class="hero-cta">
-            <a href="#propuestas" class="boton boton-primario"
-              >Explorar propuestas</a
-            >
-            <a href="#propuestas" class="boton boton-secundario"
-              >Ver documentos</a
-            >
-          </div>
-
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <span class="hero-stat-num">11</span>
-              <span class="hero-stat-label">Propuestas presentadas</span>
-            </div>
-            <div class="hero-stat">
-              <span class="hero-stat-num" id="hero-stat-grupos">—</span>
-              <span class="hero-stat-label">Grupos participantes</span>
-            </div>
-            <div class="hero-stat">
-              <span class="hero-stat-num" id="hero-stat-revisadas">0</span>
-              <span class="hero-stat-label">Revisadas por ti</span>
-            </div>
-          </div>
+        <div class="hero-cta">
+          <a href="#propuestas" class="boton boton-primario">Explorar propuestas</a>
+          <a href="#propuestas" class="boton boton-secundario">Ver documentos</a>
         </div>
 
-        <!-- ------------------------------------------------------
-         ESPACIO RESERVADO PARA IMAGEN INSTITUCIONAL
-         --------------------------------------------------------
-         Este contenedor está listo para recibir una fotografía
-         o imagen institucional (por ejemplo, una foto de la
-         sesión del Parlamento Joven, el grupo de diputados, o
-         un elemento gráfico oficial).
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num">11</span>
+            <span class="hero-stat-label">Propuestas presentadas</span>
+          </div>
+          <div class="hero-stat">
+            <!-- Este número lo calcula script.js a partir de los
+                   grupos únicos en la lista de propuestas -->
+            <span class="hero-stat-num" id="hero-stat-grupos">—</span>
+            <span class="hero-stat-label">Grupos participantes</span>
+          </div>
+          <div class="hero-stat">
+            <!-- Este número lo actualiza script.js según el
+                   progreso guardado en el navegador de cada persona -->
+            <span class="hero-stat-num" id="hero-stat-revisadas">0</span>
+            <span class="hero-stat-label">Revisadas por ti</span>
+          </div>
+        </div>
+      </div>
 
-         Para usarla:
-         1. Coloca tu archivo de imagen en esta misma carpeta,
-            por ejemplo "hero.jpg".
-         2. Reemplaza el <div class="hero-imagen-marcador">
-            completo por:
+      <!-- ------------------------------------------------------
+         Imagen institucional del hero
 
-            <img src="hero.jpg" alt="Descripción de la imagen"
-                 class="hero-imagen">
+         Para reemplazarla por tu propia foto (por ejemplo, de la
+         sesión del Parlamento Joven o el grupo de diputados):
+           1. Coloca tu archivo de imagen en esta misma carpeta,
+              por ejemplo "hero.jpg".
+           2. Cambia el "src" del <img> de abajo por el nombre de
+              tu archivo.
 
          El tamaño y las proporciones ya están definidos en
-         styles.css (busca ".hero-imagen-marcador" y ".hero-imagen").
+         styles.css (busca ".hero-imagen").
          ------------------------------------------------------ -->
-        <div class="hero-imagen-wrap">
-          <img
-            src="hero.jpg"
-            alt="Descripción de la imagen"
-            class="hero-imagen"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-     RESULTADO DE LA VOTACIÓN
-     Anuncio de la propuesta electa por la fracción. Se muestra
-     antes del buscador, para que sea lo primero que se vea al
-     bajar del hero. Para actualizarlo en el futuro (otra propuesta,
-     otro texto), edita directamente el texto de abajo.
-     ============================================================ -->
-    <section class="resultado-votacion">
-      <div class="resultado-votacion-inner">
-        <span class="resultado-insignia">Resultado de la votación</span>
-        <p class="resultado-texto">
-          Tras la votación de la fracción legislativa, cuya encuesta fue cerrada
-          a las 11:55 a. m. del domingo 26 de julio de 2026, la
-          <strong>Propuesta 06</strong> —
-          <em
-            >Ley para la promoción de la Accesibilidad Comunicativa en Espacios
-            y Servicios Públicos de Costa Rica</em
-          >, presentada por Josimar Madrigal Espinoza (Limón #144) — resultó
-          <strong>electa</strong> para representar a la fracción legislativa.
-        </p>
-        <a
-          href="#propuestas"
-          class="boton boton-primario resultado-boton"
-          data-abrir-propuesta="6"
-          >Ver propuesta electa</a
-        >
-      </div>
-    </section>
-
-    <!-- ============================================================
-     BARRA DE HERRAMIENTAS: buscador
-     ============================================================ -->
-    <div class="herramientas">
-      <div class="herramientas-inner">
-        <div class="buscador-wrap">
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-          >
-            <circle cx="11" cy="11" r="7" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-          <input
-            type="text"
-            id="buscador"
-            placeholder="Buscar propuesta por título…"
-            aria-label="Buscar propuesta por título"
-          />
-        </div>
-        <p class="herramientas-conteo" id="contador-resultados">
-          11 propuestas
-        </p>
+      <div class="hero-imagen-wrap">
+        <img src="hero.jpg" alt="Descripción de la imagen" class="hero-imagen" />
       </div>
     </div>
+  </section>
 
-    <!-- ============================================================
-     LISTADO DE PROPUESTAS
-     Generado dinámicamente desde script.js (arreglo "propuestas").
-     Para modificar el contenido de las propuestas, edita ese
-     arreglo — no este HTML.
+  <!-- ============================================================
+     RESULTADO DE LA VOTACIÓN
+     Anuncia la propuesta electa por la fracción. Va justo después
+     del hero, para que sea lo primero que se vea al bajar. Para
+     actualizarlo (otra propuesta, otra fecha, otro texto), edita
+     directamente el contenido de abajo.
      ============================================================ -->
-    <main id="propuestas" class="seccion-propuestas">
-      <div class="grid-propuestas" id="grid-propuestas">
-        <!-- Las tarjetas se insertan aquí vía JavaScript -->
-      </div>
-      <p id="sin-resultados" class="sin-resultados" hidden>
-        No se encontraron propuestas con ese título.
+  <section class="resultado-votacion">
+    <div class="resultado-votacion-inner">
+      <span class="resultado-insignia">Resultado de la votación</span>
+      <p class="resultado-texto">
+        Tras la votación de la fracción legislativa, cuya encuesta fue cerrada
+        a las 11:55 a. m. del domingo 26 de julio de 2026, la
+        <strong>Propuesta 06</strong> —
+        <em>Ley para la promoción de la Accesibilidad Comunicativa en Espacios
+          y Servicios Públicos de Costa Rica</em>, presentada por Josimar Madrigal Espinoza (Limón #144) — resultó
+        <strong>electa</strong> para representar a la fracción legislativa.
       </p>
-    </main>
+      <a href="#propuestas" class="boton boton-primario resultado-boton" data-abrir-propuesta="6">Ver propuesta
+        electa</a>
+    </div>
+  </section>
 
-    <!-- ============================================================
+  <!-- ============================================================
+     BARRA DE HERRAMIENTAS: buscador
+     Queda fija en la parte de arriba al hacer scroll. El texto del
+     contador se calcula y actualiza desde script.js.
+     ============================================================ -->
+  <div class="herramientas">
+    <div class="herramientas-inner">
+      <div class="buscador-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round">
+          <circle cx="11" cy="11" r="7" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <input type="text" id="buscador" placeholder="Buscar propuesta por título…"
+          aria-label="Buscar propuesta por título" />
+      </div>
+      <p class="herramientas-conteo" id="contador-resultados">
+        11 propuestas
+      </p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+     LISTADO DE PROPUESTAS
+     Las tarjetas se generan dinámicamente desde script.js, a partir
+     del arreglo "propuestas". Para cambiar el contenido de una
+     propuesta, edita ese arreglo — no este HTML.
+     ============================================================ -->
+  <main id="propuestas" class="seccion-propuestas">
+    <div class="grid-propuestas" id="grid-propuestas">
+      <!-- Las tarjetas se insertan aquí vía JavaScript -->
+    </div>
+    <p id="sin-resultados" class="sin-resultados" hidden>
+      No se encontraron propuestas con ese título.
+    </p>
+  </main>
+
+  <!-- ============================================================
+     SELLO DE LA FRACCIÓN
+     Va antes del pie de página, a modo de sello (mismo tamaño de
+     112px, definido en styles.css → clase ".fracc-logo").
+     ============================================================ -->
+  <div class="fracc-sello-wrap">
+    <img src="logo_fraccion_circular.png" alt="Sello de la Fracción Legislativa #4" class="fracc-logo" />
+  </div>
+
+  <!-- ============================================================
      PIE DE PÁGINA
      ============================================================ -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <p class="footer-titulo">
-          Parlamento Joven Guía y Scout Costa Rica 2026
-        </p>
-        <p class="footer-sub">
-          Repositorio de consulta de propuestas legislativas
-        </p>
-        <p class="watermark-footer">
-          Desarrollado por Josimar Madrigal (<a
-            href="https://github.com/josmrpy"
-            >@josmr.py</a
-          >) · Grupo Guía y Scout 144
-        </p>
-      </div>
-    </footer>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-titulo">
+        Parlamento Joven Guía y Scout Costa Rica 2026
+      </p>
+      <p class="footer-sub">
+        Repositorio de consulta de propuestas legislativas
+      </p>
+      <p class="watermark-footer">
+        Desarrollado por Josimar Madrigal (<a href="https://github.com/josmrpy">@josmr.py</a>) · Grupo Guía y Scout 144
+      </p>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>

@@ -1,23 +1,41 @@
 /* ==================================================================
    PARLAMENTO JOVEN GUÍA Y SCOUT COSTA RICA 2026
-   Lógica de la plataforma de propuestas
+   Lógica del sitio de propuestas
+
+   Cómo está organizado este archivo:
+     1. Datos de las propuestas   → lo único que sueles editar
+     2. Configuración y estado    → referencias al HTML, variables globales
+     3. Progreso guardado         → "marcar como revisada" (localStorage)
+     4. Visor de documentos       → decide si mostrar PDF, video o iframe
+     5. Construcción de tarjetas  → arma el HTML de cada propuesta
+     6. Abrir, cerrar y navegar   → interacción del usuario con las tarjetas
+     7. Eventos                  → clics, búsqueda, banner de resultado
+     8. Arranque del sitio
+   ================================================================== */
+
+/* ==================================================================
+   1. DATOS DE LAS PROPUESTAS
    ------------------------------------------------------------------
-   ÚNICA SECCIÓN QUE NECESITAS EDITAR PARA CARGAR TUS DATOS REALES:
-   el arreglo "propuestas" que está justo debajo de este comentario.
+   Esta es la única parte del archivo que necesitas tocar para cargar
+   contenido real. Cada objeto de la lista es una propuesta y se
+   convierte automáticamente en una tarjeta del sitio.
 
-   Por cada propuesta reemplaza:
-     id       -> número (mantén el orden 1, 2, 3... es solo una etiqueta)
-     titulo   -> Nombre completo de la propuesta
-     autor    -> Nombre de quien la presenta
-     grupo    -> Grupo Guía y Scout (ej. "GYS 144")
-     resumen  -> Resumen corto (2-4 líneas)
-     drive    -> Enlace al documento en Google Drive
-     pdf      -> Nombre del archivo PDF a incrustar (colócalo en la
-                 misma carpeta que este sitio) o una URL completa a
-                 un PDF público
+   Campos de cada propuesta:
+     id       → número de la propuesta (1, 2, 3...). Solo es una
+                etiqueta, no tiene que coincidir con la posición.
+     titulo   → nombre completo de la propuesta
+     autor    → nombre de quien la presenta
+     grupo    → grupo Guía y Scout (ej. "GYS 144")
+     resumen  → resumen corto, de 2 a 4 líneas
+     drive    → enlace al documento completo en Google Drive
+     pdf      → nombre del archivo a incrustar en el visor. Puede ser
+                un PDF (colócalo en la misma carpeta que este sitio,
+                dentro de PROPUESTAS/) o una URL completa a un video
+                o documento público.
 
-   No necesitas tocar el resto de este archivo para que el sitio
-   funcione: el grid completo se genera a partir de este arreglo.
+   Nada más en este archivo necesita cambios para que el sitio
+   funcione: el listado completo se genera solo, a partir de esta
+   lista.
    ================================================================== */
 
 const propuestas = [
@@ -152,10 +170,14 @@ const propuestas = [
 ];
 
 /* ==================================================================
-   A partir de aquí: lógica de la plataforma.
-   No es necesario modificar nada más abajo para uso normal.
+   2. CONFIGURACIÓN Y ESTADO
+   ------------------------------------------------------------------
+   De aquí en adelante es la lógica del sitio. No hace falta tocar
+   nada más abajo para el uso normal — solo si quieres cambiar cómo
+   se comporta la página.
    ================================================================== */
 
+// Elementos del HTML que la lógica va a leer y actualizar
 const grid = document.getElementById("grid-propuestas");
 const sinResultados = document.getElementById("sin-resultados");
 const buscador = document.getElementById("buscador");
@@ -163,11 +185,23 @@ const contadorResultados = document.getElementById("contador-resultados");
 const heroStatGrupos = document.getElementById("hero-stat-grupos");
 const heroStatRevisadas = document.getElementById("hero-stat-revisadas");
 
+// Nombre de la llave usada para guardar el progreso en el navegador
 const CLAVE_REVISADAS = "pj-gys-2026-revisadas";
 
-let indiceAbierto = null; // índice (dentro de "propuestas") de la tarjeta expandida
+// Índice (dentro de "propuestas") de la tarjeta abierta actualmente.
+// null significa que ninguna tarjeta está abierta.
+let indiceAbierto = null;
 
-/* --- Progreso de revisión guardado en el navegador de cada persona --- */
+/* ==================================================================
+   3. PROGRESO GUARDADO ("marcar como revisada")
+   ------------------------------------------------------------------
+   Cada persona que visita el sitio guarda su propio progreso en el
+   almacenamiento local del navegador (localStorage). No se comparte
+   con nadie más ni se envía a ningún servidor.
+   ================================================================== */
+
+// Lee el progreso guardado. Si no hay nada guardado, o el dato está
+// dañado, simplemente empieza de cero.
 function obtenerRevisadas() {
   try {
     return new Set(JSON.parse(localStorage.getItem(CLAVE_REVISADAS)) || []);
@@ -175,24 +209,44 @@ function obtenerRevisadas() {
     return new Set();
   }
 }
+
+// Guarda el progreso actual en el navegador.
 function guardarRevisadas(set) {
   localStorage.setItem(CLAVE_REVISADAS, JSON.stringify([...set]));
 }
+
+// Progreso de revisión cargado al abrir la página.
 let revisadas = obtenerRevisadas();
 
+/* ==================================================================
+   4. VISOR DE DOCUMENTOS
+   ------------------------------------------------------------------
+   Cada propuesta puede traer un PDF, un video o cualquier otro
+   documento embebible. Estas funciones detectan de cuál se trata,
+   a partir de la extensión del archivo, y arman el visor correcto.
+   El visor solo se carga la primera vez que se abre la tarjeta, para
+   no cargar los 11 documentos de una sola vez al entrar al sitio.
+   ================================================================== */
+
+// ¿La ruta apunta a un archivo .pdf?
 function esPdfRuta(ruta) {
   return typeof ruta === "string" && ruta.match(/\.pdf$/i);
 }
 
+// ¿La ruta apunta a un video (.mp4, .webm, .ogg)?
 function esVideoRuta(ruta) {
   return typeof ruta === "string" && ruta.match(/\.(mp4|webm|ogg)$/i);
 }
 
+// Arma la URL del visor de PDF.js para un archivo dado.
 function crearRutaVisorPDF(origen) {
   const archivo = new URL(origen, window.location.href).href;
   return `pdfjs/web/viewer.html?file=${encodeURIComponent(archivo)}`;
 }
 
+// Inserta el visor correspondiente dentro de una tarjeta ya creada.
+// Si ya se cargó antes, no vuelve a hacer nada (evita recargar el
+// documento cada vez que se abre y cierra la misma tarjeta).
 function cargarVisor(tarjeta) {
   const visorContenedor = tarjeta.querySelector(".detalle-visor");
   if (!visorContenedor || visorContenedor.dataset.cargado === "true") return;
@@ -206,6 +260,7 @@ function cargarVisor(tarjeta) {
   visorContenedor.dataset.cargado = "true";
 
   if (esPdfRuta(recurso)) {
+    // PDF → se muestra dentro del visor de PDF.js
     const iframe = document.createElement("iframe");
     iframe.src = crearRutaVisorPDF(recurso);
     iframe.title = `Visor PDF de la propuesta ${String(propuesta.id).padStart(2, "0")}`;
@@ -213,6 +268,7 @@ function cargarVisor(tarjeta) {
     visorContenido.innerHTML = "";
     visorContenido.appendChild(iframe);
   } else if (esVideoRuta(recurso)) {
+    // Video → reproductor nativo del navegador
     const video = document.createElement("video");
     video.controls = true;
     video.playsInline = true;
@@ -221,6 +277,7 @@ function cargarVisor(tarjeta) {
     visorContenido.innerHTML = "";
     visorContenido.appendChild(video);
   } else {
+    // Cualquier otro caso → se intenta mostrar en un iframe genérico
     const iframe = document.createElement("iframe");
     iframe.src = recurso;
     iframe.title = `Documento de la propuesta ${String(propuesta.id).padStart(2, "0")}`;
@@ -230,23 +287,39 @@ function cargarVisor(tarjeta) {
   }
 }
 
+// Actualiza los números del hero: cuántas propuestas ha revisado la
+// persona y cuántos grupos distintos participan en total.
 function actualizarEstadisticas() {
   heroStatRevisadas.textContent = revisadas.size;
   const gruposUnicos = new Set(propuestas.map((p) => p.grupo));
   heroStatGrupos.textContent = gruposUnicos.size;
 }
 
-/* --- Utilidades para evitar inyección de HTML --- */
+/* ==================================================================
+   5. CONSTRUCCIÓN DE TARJETAS
+   ------------------------------------------------------------------
+   Cada propuesta se convierte en una tarjeta (una card colapsable).
+   Todo el texto que viene de "propuestas" pasa por escapeHTML /
+   escapeAttr antes de insertarse en la página, para que un título o
+   resumen con caracteres como < o " nunca rompa el HTML.
+   ================================================================== */
+
+// Escapa texto para insertarlo de forma segura dentro del HTML.
 function escapeHTML(texto) {
   const div = document.createElement("div");
   div.textContent = texto ?? "";
   return div.innerHTML;
 }
+
+// Escapa texto para insertarlo de forma segura dentro de un atributo
+// (por ejemplo href="..."), donde solo las comillas dobles importan.
 function escapeAttr(texto) {
   return (texto ?? "").replace(/"/g, "&quot;");
 }
 
-/* --- Construcción de una tarjeta --- */
+// Construye el elemento <article> completo de una propuesta: la
+// cabecera (siempre visible) y el panel de detalle (se despliega al
+// hacer clic).
 function crearTarjeta(propuesta, indice) {
   const tarjeta = document.createElement("article");
   tarjeta.className = "tarjeta";
@@ -307,8 +380,8 @@ function crearTarjeta(propuesta, indice) {
         </div>
 
         <div class="detalle-nav">
-          <button class="boton boton-outline" type="button" data-accion="anterior">← Propuesta anterior</button>
-          <button class="boton boton-outline" type="button" data-accion="siguiente">Siguiente propuesta →</button>
+          <button class="boton boton-outline" type="button" data-accion="anterior"${indice === 0 ? " disabled" : ""}>← Propuesta anterior</button>
+          <button class="boton boton-outline" type="button" data-accion="siguiente"${indice === propuestas.length - 1 ? " disabled" : ""}>Siguiente propuesta →</button>
         </div>
 
       </div>
@@ -318,7 +391,9 @@ function crearTarjeta(propuesta, indice) {
   return tarjeta;
 }
 
-/* --- Renderiza el grid completo (respetando el filtro de búsqueda) --- */
+// Vuelve a dibujar el listado completo, aplicando el filtro de
+// búsqueda si hay uno. Si la tarjeta que estaba abierta sigue
+// visible después de filtrar, se vuelve a abrir tal cual estaba.
 function renderizar(filtro = "") {
   grid.innerHTML = "";
 
@@ -344,7 +419,15 @@ function renderizar(filtro = "") {
       : `${visibles.length} de ${propuestas.length} propuestas`;
 }
 
-/* --- Abrir / cerrar tarjetas (solo una abierta a la vez) --- */
+/* ==================================================================
+   6. ABRIR, CERRAR Y NAVEGAR ENTRE TARJETAS
+   ------------------------------------------------------------------
+   Solo una tarjeta puede estar abierta a la vez. Al abrir una nueva,
+   la anterior se cierra automáticamente.
+   ================================================================== */
+
+// Marca una tarjeta como abierta y calcula su altura real para que
+// la animación de despliegue (definida en el CSS) funcione.
 function abrirTarjetaElemento(tarjeta) {
   const boton = tarjeta.querySelector(".tarjeta-cabecera");
   const panel = tarjeta.querySelector(".tarjeta-panel");
@@ -352,6 +435,8 @@ function abrirTarjetaElemento(tarjeta) {
   boton.setAttribute("aria-expanded", "true");
   panel.style.maxHeight = panel.scrollHeight + "px";
 }
+
+// Hace lo contrario: colapsa la tarjeta de vuelta a su cabecera.
 function cerrarTarjetaElemento(tarjeta) {
   const boton = tarjeta.querySelector(".tarjeta-cabecera");
   const panel = tarjeta.querySelector(".tarjeta-panel");
@@ -360,6 +445,9 @@ function cerrarTarjetaElemento(tarjeta) {
   panel.style.maxHeight = null;
 }
 
+// Abre o cierra la tarjeta en la posición "indice". Si había otra
+// tarjeta abierta, la cierra primero. Si se hace clic sobre la que
+// ya estaba abierta, simplemente se cierra.
 function alternarTarjeta(indice) {
   const tarjetaActual = grid.querySelector(`.tarjeta[data-indice="${indice}"]`);
   if (!tarjetaActual) return;
@@ -385,7 +473,10 @@ function alternarTarjeta(indice) {
   }
 }
 
-/* --- Navegar a la propuesta anterior/siguiente dentro del panel abierto --- */
+// Salta directamente a la propuesta anterior o siguiente, sin que la
+// persona tenga que cerrar y volver a buscar. Si hay un filtro de
+// búsqueda activo, lo limpia primero para poder llegar a cualquier
+// propuesta del listado completo.
 function irAPropuesta(indiceDestino) {
   if (indiceDestino < 0 || indiceDestino >= propuestas.length) return;
   if (buscador.value.trim() !== "") {
@@ -396,7 +487,8 @@ function irAPropuesta(indiceDestino) {
   alternarTarjeta(indiceDestino);
 }
 
-/* --- Marcar una propuesta como revisada --- */
+// Marca (o desmarca) una propuesta como revisada, guarda el cambio y
+// actualiza la tarjeta y las estadísticas del hero en el momento.
 function alternarRevisada(indice) {
   const propuesta = propuestas[indice];
   if (revisadas.has(propuesta.id)) revisadas.delete(propuesta.id);
@@ -413,12 +505,20 @@ function alternarRevisada(indice) {
     ? "Marcada como revisada ✓"
     : "Marcar como revisada";
 
+  // Si la tarjeta está abierta, su alto cambió (el botón cambió de
+  // texto), así que se recalcula para que no quede cortada.
   const panel = tarjeta.querySelector(".tarjeta-panel");
   if (tarjeta.classList.contains("abierta"))
     panel.style.maxHeight = panel.scrollHeight + "px";
 }
 
-/* --- Delegación de eventos: un solo listener para todo el grid --- */
+/* ==================================================================
+   7. EVENTOS
+   ================================================================== */
+
+// Un solo listener para todo el grid (delegación de eventos), en vez
+// de uno por tarjeta: más simple y funciona también con las tarjetas
+// que se vuelven a crear cada vez que se filtra la búsqueda.
 grid.addEventListener("click", (evento) => {
   const tarjeta = evento.target.closest(".tarjeta");
   if (!tarjeta) return;
@@ -437,25 +537,30 @@ grid.addEventListener("click", (evento) => {
   if (boton) alternarTarjeta(indice);
 });
 
-/* --- Buscador por título --- */
+// Filtra el listado en vivo mientras la persona escribe en el
+// buscador. Cerrar la tarjeta abierta evita confusiones si deja de
+// estar entre los resultados filtrados.
 buscador.addEventListener("input", () => {
   indiceAbierto = null;
   renderizar(buscador.value);
 });
 
-/* --- Banner de "Resultado de la votación": abre la propuesta electa --- */
+// El banner de "Resultado de la votación" abre directamente la
+// propuesta electa. El pequeño retraso deja que termine el scroll
+// automático hacia #propuestas antes de disparar la animación de
+// apertura, para que se vea completa.
 document.querySelectorAll("[data-abrir-propuesta]").forEach((elemento) => {
   elemento.addEventListener("click", () => {
     const idObjetivo = Number(elemento.dataset.abrirPropuesta);
     const indice = propuestas.findIndex((p) => p.id === idObjetivo);
     if (indice === -1) return;
-    // Se espera a que termine el scroll hacia #propuestas antes de abrir
-    // la tarjeta, para que la animación de apertura se vea completa.
     setTimeout(() => alternarTarjeta(indice), 350);
   });
 });
 
-/* --- Inicialización --- */
+/* ==================================================================
+   8. ARRANQUE DEL SITIO
+   ================================================================== */
 (function iniciar() {
   renderizar();
   actualizarEstadisticas();

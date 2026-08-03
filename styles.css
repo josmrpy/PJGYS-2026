@@ -1,54 +1,56 @@
 /* ==================================================================
    PARLAMENTO JOVEN GUÍA Y SCOUT COSTA RICA 2026
-   Sistema visual — Propuestas Legislativas
-   ------------------------------------------------------------------
-   ÍNDICE DE ESTE ARCHIVO (usa Ctrl+F / Cmd+F para saltar de sección)
-     1. COLORES Y TIPOGRAFÍA   → cambia la identidad visual completa
-     2. BASE
-     3. BARRA SUPERIOR
-     4. HERO
-     4.5 RESULTADO DE LA VOTACIÓN
-     5. BARRA DE HERRAMIENTAS (buscador)
-     6. GRID Y TARJETAS DE PROPUESTAS
-     7. PIE DE PÁGINA
-     8. RESPONSIVE
+   Estilos del sitio de propuestas legislativas
+
+   Este archivo está dividido en secciones, en el mismo orden en que
+   aparecen los elementos en la página. Usa Ctrl+F / Cmd+F con el
+   número de sección para saltar directo a lo que buscas:
+
+     1. Colores y tipografía   → la base visual de todo el sitio
+     2. Base                   → reglas generales del documento
+     3. Barra superior
+     4. Hero (portada)
+     4.5 Resultado de la votación
+     5. Barra de herramientas (buscador)
+     6. Grid y tarjetas de propuestas
+     7. Sello de la fracción
+     8. Pie de página
+     9. Responsive               → ajustes para pantallas chicas
    ================================================================== */
 
 /* ==================================================================
    1. COLORES Y TIPOGRAFÍA
    ------------------------------------------------------------------
-   Paleta institucional oficial. NO agregar colores fuera de esta
-   lista: el diseño está pensado para funcionar solo con estos.
+   Esta es la paleta oficial. Todo el diseño está pensado para
+   funcionar solo con estos colores — evita agregar otros nuevos.
 
-     --azul   (#2C1261) → encabezados, botones principales, footer,
-                          títulos importantes
-     --rojo   (#ED1A39) → acentos, indicadores activos, enlaces
-                          importantes. Usar con moderación.
-     El resto son neutros de apoyo (fondos, texto, bordes).
+     --azul  (#2C1261) → encabezados, botones principales, footer
+     --rojo  (#ED1A39) → acentos y estados activos. Se usa poco,
+                         a propósito, para que resalte cuando importa.
+
+   El resto son neutros: fondos, texto y bordes de apoyo.
    ================================================================== */
 :root {
-  /* --- Colores institucionales --- */
+  /* Colores institucionales */
   --azul: #2c1261;
   --rojo: #ed1a39;
 
-  /* --- Neutros --- */
+  /* Neutros: fondos, texto y bordes */
   --blanco: #ffffff;
   --fondo-alterno: #f8f9fc;
   --texto-principal: #1f2937;
   --texto-secundario: #6b7280;
   --borde: #e5e7eb;
 
-  /* --- Tipografía ---
-     Título:  Montserrat  → encabezados y elementos estructurales
-     Texto:   Nunito      → párrafos y contenido de lectura
-     Para cambiar la fuente, edita estas dos variables y el bloque
+  /* Tipografía: Montserrat para títulos, Nunito para texto normal.
+     Para cambiar de fuente, edita estas dos variables junto con el
      <link> de Google Fonts en index.html. */
   --fuente-titulo: "Montserrat", "Segoe UI", sans-serif;
   --fuente-texto: "Nunito", "Segoe UI", sans-serif;
 
-  /* --- Forma y transición ---
-     Solo se usan transiciones cortas para: abrir/cerrar propuestas
-     y estados de hover discretos en botones y tarjetas. */
+  /* Bordes redondeados y sombras reutilizables. Las transiciones son
+     cortas y sutiles a propósito: solo se notan al abrir/cerrar una
+     propuesta o al pasar el mouse sobre botones y tarjetas. */
   --radio-s: 8px;
   --radio-m: 12px;
   --sombra-suave: 0 1px 3px rgba(31, 41, 55, 0.06);
@@ -56,18 +58,24 @@
   --transicion: 160ms ease;
 }
 
-/* Target all links inside a paragraph */
-p a {
-  color: #ed1a39; /* Changes the text color (Hex or name) */
-  text-decoration: none; /* Optional: Removes the default underline */
-}
-
 /* ==================================================================
    2. BASE
+   ------------------------------------------------------------------
+   Reglas generales que aplican a todo el documento.
    ================================================================== */
+
+/* Enlaces dentro de párrafos: color de acento, sin subrayado */
+p a {
+  color: var(--rojo);
+  text-decoration: none;
+}
+
+/* Todo mide su ancho/alto incluyendo el padding y el borde */
 * {
   box-sizing: border-box;
 }
+
+/* Desplazamiento suave al hacer clic en enlaces internos (#anclas) */
 html {
   scroll-behavior: smooth;
 }
@@ -89,6 +97,8 @@ h3 {
   color: var(--azul);
 }
 
+/* Enlace de accesibilidad: invisible hasta que se navega con
+   teclado (Tab), para saltar directo al listado de propuestas */
 .skip-link {
   position: absolute;
   left: -999px;
@@ -99,6 +109,7 @@ h3 {
   border-radius: 0 0 8px 0;
   z-index: 200;
 }
+
 .skip-link:focus {
   left: 0;
   top: 0;
@@ -111,6 +122,7 @@ h3 {
   background: var(--azul);
   color: var(--blanco);
 }
+
 .topbar-inner {
   max-width: 1180px;
   margin: 0 auto;
@@ -121,15 +133,18 @@ h3 {
   gap: 12px;
   flex-wrap: wrap;
 }
+
 .topbar-logo {
   height: 64px;
   display: block;
 }
+
 .topbar-titulo {
   font-family: var(--fuente-titulo);
   font-size: 0.85rem;
   font-weight: 700;
 }
+
 .topbar-tag {
   font-size: 0.78rem;
   font-weight: 600;
@@ -138,12 +153,11 @@ h3 {
 }
 
 /* ==================================================================
-   4. HERO
+   4. HERO (portada)
    ------------------------------------------------------------------
-   Sección simple: texto a la izquierda, espacio de imagen a la
-   derecha. Sin ilustraciones, sin fondos decorativos, sin
-   animaciones. Para editar los textos, ve a index.html → <section
-   class="hero">.
+   Texto a la izquierda, imagen a la derecha — sin animaciones ni
+   fondos decorativos. Para editar los textos de esta sección, ve a
+   index.html → <section class="hero">.
    ================================================================== */
 .hero {
   background: var(--fondo-alterno);
@@ -199,9 +213,8 @@ h3 {
   margin-bottom: 40px;
 }
 
-/* --- Botones ---
-   Un único color principal por botón; el hover solo cambia el tono
-   de fondo o el borde, sin desplazamientos ni sombras exageradas. */
+/* Botones: un solo color principal cada uno. El hover solo cambia
+   el tono de fondo o borde — nada de movimiento ni sombras grandes. */
 .boton {
   display: inline-flex;
   align-items: center;
@@ -224,6 +237,7 @@ h3 {
   background: var(--rojo);
   color: #fff;
 }
+
 .boton-primario:hover {
   background: #d4152f;
 }
@@ -233,6 +247,7 @@ h3 {
   color: var(--azul);
   border-color: var(--borde);
 }
+
 .boton-secundario:hover {
   border-color: var(--azul);
   background: var(--blanco);
@@ -243,30 +258,33 @@ h3 {
   gap: 32px;
   flex-wrap: wrap;
 }
+
 .hero-stat {
   display: flex;
   flex-direction: column;
 }
+
 .hero-stat-num {
   font-family: var(--fuente-titulo);
   font-weight: 800;
   font-size: 1.5rem;
   color: var(--azul);
 }
+
 .hero-stat-label {
   font-size: 0.78rem;
   color: var(--texto-secundario);
   font-weight: 600;
 }
 
-/* --- Espacio reservado para imagen institucional ---
-   Ver instrucciones completas en index.html, justo encima de
-   ".hero-imagen-wrap". Cuando reemplaces el marcador por una
-   imagen real (<img class="hero-imagen">), esta misma proporción
-   y borde redondeado se mantienen automáticamente. */
+/* Espacio para la imagen institucional del hero. Las instrucciones
+   completas están en index.html, junto a ".hero-imagen-wrap". La
+   proporción y el borde redondeado se mantienen automáticamente
+   apenas se coloca la imagen real. */
 .hero-imagen-wrap {
   width: 100%;
 }
+
 .hero-imagen-marcador {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -282,12 +300,14 @@ h3 {
   text-align: center;
   padding: 20px;
 }
+
 .hero-imagen-marcador p {
   margin: 0;
   font-size: 0.86rem;
   font-weight: 700;
   color: var(--texto-secundario);
 }
+
 .hero-imagen-nota {
   font-weight: 400 !important;
   font-size: 0.76rem !important;
@@ -305,13 +325,14 @@ h3 {
 /* ==================================================================
    4.5 RESULTADO DE LA VOTACIÓN
    ------------------------------------------------------------------
-   Banner que anuncia la propuesta electa. Va entre el hero y la
-   barra de herramientas. Para editar el texto, ve a index.html →
+   Banner entre el hero y la barra de herramientas que anuncia la
+   propuesta electa. Para cambiar el texto, ve a index.html →
    <section class="resultado-votacion">.
    ================================================================== */
 .resultado-votacion {
   background: var(--azul);
 }
+
 .resultado-votacion-inner {
   max-width: 1180px;
   margin: 0 auto;
@@ -321,6 +342,7 @@ h3 {
   gap: 18px;
   flex-wrap: wrap;
 }
+
 .resultado-insignia {
   display: inline-flex;
   align-items: center;
@@ -336,6 +358,7 @@ h3 {
   border-radius: 999px;
   white-space: nowrap;
 }
+
 .resultado-texto {
   margin: 0;
   flex: 1 1 320px;
@@ -343,12 +366,15 @@ h3 {
   font-size: 0.92rem;
   line-height: 1.55;
 }
+
 .resultado-texto strong {
   font-weight: 800;
 }
+
 .resultado-texto em {
   font-style: italic;
 }
+
 .resultado-boton {
   flex-shrink: 0;
   white-space: nowrap;
@@ -356,6 +382,9 @@ h3 {
 
 /* ==================================================================
    5. BARRA DE HERRAMIENTAS (buscador)
+   ------------------------------------------------------------------
+   Franja fija en la parte de arriba (queda pegada al hacer scroll)
+   con el buscador y el contador de resultados.
    ================================================================== */
 .herramientas {
   background: var(--blanco);
@@ -364,6 +393,7 @@ h3 {
   top: 0;
   z-index: 30;
 }
+
 .herramientas-inner {
   max-width: 1180px;
   margin: 0 auto;
@@ -387,9 +417,11 @@ h3 {
   max-width: 380px;
   color: var(--texto-secundario);
 }
+
 .buscador-wrap:focus-within {
   border-color: var(--azul);
 }
+
 .buscador-wrap input {
   border: 0;
   outline: 0;
@@ -410,23 +442,15 @@ h3 {
 /* ==================================================================
    6. GRID Y TARJETAS DE PROPUESTAS
    ------------------------------------------------------------------
-   Para modificar el CONTENIDO de las propuestas (título, autor,
-   grupo, resumen, PDF, enlace de Drive), edita el arreglo
-   "propuestas" en script.js — no este archivo.
+   El contenido de cada propuesta (título, autor, grupo, resumen,
+   PDF, enlace de Drive) NO se edita aquí — vive en el arreglo
+   "propuestas" dentro de script.js. Este archivo solo define su
+   apariencia.
    ================================================================== */
 .seccion-propuestas {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 44px 28px 80px;
-}
-
-.fracc-logo {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  opacity: 0.15;
-  pointer-events: none;
-  z-index: 999;
+  padding: 44px 28px 28px;
 }
 
 .grid-propuestas {
@@ -442,9 +466,8 @@ h3 {
   padding: 56px 0;
 }
 
-/* --- Tarjeta colapsada ---
-   El hover es intencionalmente discreto: solo cambia el color del
-   borde y la sombra, sin desplazamientos ni escalados. */
+/* Tarjeta cerrada. El hover es discreto a propósito: solo cambia
+   el borde y la sombra, sin mover ni escalar la tarjeta. */
 .tarjeta {
   background: var(--blanco);
   border: 1px solid var(--borde);
@@ -480,7 +503,7 @@ h3 {
   color: inherit;
 }
 
-/* Insignia numerada: color plano institucional, sin degradado */
+/* Círculo numerado de cada tarjeta: color plano, sin degradado */
 .tarjeta-insignia {
   position: relative;
   flex: none;
@@ -497,8 +520,8 @@ h3 {
   font-size: 0.95rem;
 }
 
-/* Insignia de "revisada": círculo rojo con marca, según la regla de
-   que el rojo se usa para indicadores activos/de estado */
+/* Marca de "revisada": círculo rojo con un check, superpuesto en
+   la esquina de la insignia numerada */
 .tarjeta-insignia-check {
   position: absolute;
   bottom: -5px;
@@ -512,6 +535,7 @@ h3 {
   align-items: center;
   justify-content: center;
 }
+
 .tarjeta.revisada .tarjeta-insignia-check {
   display: flex;
 }
@@ -520,6 +544,7 @@ h3 {
   flex: 1 1 auto;
   min-width: 0;
 }
+
 .tarjeta-titulo {
   font-family: var(--fuente-titulo);
   font-weight: 700;
@@ -532,6 +557,7 @@ h3 {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 .tarjeta-meta {
   font-size: 0.82rem;
   color: var(--texto-secundario);
@@ -553,9 +579,11 @@ h3 {
   font-size: 0.8rem;
   color: var(--azul);
 }
+
 .tarjeta-flecha svg {
   transition: transform var(--transicion);
 }
+
 .tarjeta.abierta .tarjeta-flecha svg {
   transform: rotate(90deg);
 }
@@ -566,9 +594,8 @@ h3 {
   }
 }
 
-/* --- Panel expandido ---
-   Única animación funcional del sitio: abrir y cerrar la propuesta.
-   La altura se calcula en script.js (panel.scrollHeight). */
+/* Panel de detalle. Su altura real la calcula script.js
+   (panel.scrollHeight) para poder animar el despliegue. */
 .tarjeta-panel {
   max-height: 0;
   overflow: hidden;
@@ -587,12 +614,14 @@ h3 {
   gap: 12px;
   margin: 18px 0 20px;
 }
+
 .detalle-campo {
   background: var(--fondo-alterno);
   border: 1px solid var(--borde);
   border-radius: var(--radio-s);
   padding: 12px 14px;
 }
+
 .detalle-campo dt {
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -601,6 +630,7 @@ h3 {
   font-weight: 700;
   margin-bottom: 3px;
 }
+
 .detalle-campo dd {
   margin: 0;
   font-weight: 700;
@@ -628,6 +658,7 @@ h3 {
   color: var(--azul);
   padding: 10px 18px;
 }
+
 .boton-outline:hover {
   border-color: var(--azul);
 }
@@ -638,23 +669,24 @@ h3 {
   color: var(--texto-principal);
   padding: 10px 18px;
 }
+
 .tarjeta.revisada .boton-marcar {
   background: var(--blanco);
   border-color: var(--rojo);
   color: var(--rojo);
 }
 
-/* --- Visor de documento ---
-   El visor es un iframe que carga el viewer.html de pdf.js (con su
-   propia barra de herramientas y canvas internos). Este bloque solo
-   controla el ESPACIO/CONTENEDOR que le damos en la página — no el
-   layout interno del visor, que vive en su propio documento. */
+/* Visor de documentos. Es un iframe que carga el viewer.html de
+   PDF.js (con su propia barra de herramientas). Aquí solo se define
+   el tamaño del espacio que le damos — su interior es otro
+   documento y no se controla desde este archivo. */
 .detalle-visor {
   border: 1px solid var(--borde);
   border-radius: var(--radio-m);
   overflow: hidden;
   background: var(--fondo-alterno);
 }
+
 .visor-etiqueta {
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -663,10 +695,12 @@ h3 {
   font-weight: 700;
   padding: 12px 16px 0;
 }
+
 .visor-contenido {
   min-height: 500px;
   width: 100%;
 }
+
 .visor-placeholder {
   display: flex;
   align-items: center;
@@ -678,6 +712,7 @@ h3 {
   border-top: 1px solid var(--borde);
   text-align: center;
 }
+
 .visor-contenido iframe,
 .visor-contenido video {
   width: 100%;
@@ -694,34 +729,60 @@ h3 {
   padding-top: 18px;
   border-top: 1px solid var(--borde);
 }
+
 .detalle-nav button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
 
 /* ==================================================================
-   7. PIE DE PÁGINA
+   7. SELLO DE LA FRACCIÓN
+   ------------------------------------------------------------------
+   Logo de la fracción, centrado como un sello justo antes del pie
+   de página. (Antes iba flotando con opacidad baja sobre el
+   contenido, tipo marca de agua; ahora va sólido y en su propio
+   espacio, sin superponerse a nada.)
+   ================================================================== */
+.fracc-sello-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.fracc-logo {
+  height: 112px;
+  width: auto;
+  display: block;
+  opacity: 1;
+}
+
+/* ==================================================================
+   8. PIE DE PÁGINA
    ================================================================== */
 .site-footer {
   background: var(--azul);
   color: #d8cfec;
 }
+
 .footer-inner {
   max-width: 1180px;
   margin: 0 auto;
   padding: 36px 28px 30px;
   text-align: center;
 }
+
 .footer-titulo {
   color: #fff;
   font-family: var(--fuente-titulo);
   font-weight: 700;
   margin: 0 0 4px;
 }
+
 .footer-sub {
   margin: 0 0 16px;
   font-size: 0.88rem;
 }
+
 .watermark-footer {
   margin: 0;
   font-size: 0.76rem;
@@ -732,7 +793,10 @@ h3 {
 }
 
 /* ==================================================================
-   8. RESPONSIVE
+   9. RESPONSIVE
+   ------------------------------------------------------------------
+   Ajustes para pantallas más angostas, de la más grande a la más
+   chica.
    ================================================================== */
 @media (max-width: 900px) {
   .hero-inner {
@@ -740,6 +804,7 @@ h3 {
     padding: 44px 24px;
     gap: 32px;
   }
+
   .hero-imagen-wrap {
     order: -1;
     max-width: 420px;
@@ -751,22 +816,20 @@ h3 {
   .grid-propuestas {
     grid-template-columns: 1fr;
   }
+
   .hero-stats {
     gap: 20px;
   }
 
-  /* --- Visor pdf.js en mobile ---
-     Antes: el selector real era ".detalle-visor iframe" (no existía,
-     el iframe está dentro de .visor-contenido) y el alto quedaba fijo
-     en 500px, lo que hacía que el visor se viera cortado o con mucho
-     scroll interno en pantallas chicas.
-     Ahora: usamos el selector correcto y una altura basada en vh con
-     un tope, para que el contenedor se ajuste al espacio real de la
-     pantalla en vez de un valor fijo pensado para escritorio. */
+  /* Visor de PDF.js en celular: en vez de una altura fija de 500px
+     (pensada para escritorio), se usa un porcentaje de la pantalla
+     con un tope, para que el visor no se vea cortado ni obligue a
+     hacer mucho scroll interno. */
   .visor-contenido,
   .visor-placeholder {
     min-height: 60vh;
   }
+
   .visor-contenido iframe,
   .visor-contenido video {
     height: 60vh;
@@ -780,13 +843,15 @@ h3 {
   .detalle-acciones {
     flex-direction: column;
   }
+
   .detalle-acciones .boton {
     width: 100%;
     justify-content: center;
   }
 }
 
-/* Respeta la preferencia de "reducir movimiento" del sistema */
+/* Si la persona activó "reducir movimiento" en su sistema, se
+   desactivan todas las transiciones y el scroll suave */
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
