@@ -1,56 +1,22 @@
-/* ==================================================================
-   PARLAMENTO JOVEN GUÍA Y SCOUT COSTA RICA 2026
-   Estilos del sitio de propuestas legislativas
+/* Parlamento Joven Guía y Scout Costa Rica 2026 — estilos del sitio
+   Secciones: 1 colores/tipografía · 2 base · 3 topbar · 4 hero
+   4.5 resultado de votación · 5 buscador · 6 grid y tarjetas
+   7 sello · 8 footer · 9 responsive */
 
-   Este archivo está dividido en secciones, en el mismo orden en que
-   aparecen los elementos en la página. Usa Ctrl+F / Cmd+F con el
-   número de sección para saltar directo a lo que buscas:
-
-     1. Colores y tipografía   → la base visual de todo el sitio
-     2. Base                   → reglas generales del documento
-     3. Barra superior
-     4. Hero (portada)
-     4.5 Resultado de la votación
-     5. Barra de herramientas (buscador)
-     6. Grid y tarjetas de propuestas
-     7. Sello de la fracción
-     8. Pie de página
-     9. Responsive               → ajustes para pantallas chicas
-   ================================================================== */
-
-/* ==================================================================
-   1. COLORES Y TIPOGRAFÍA
-   ------------------------------------------------------------------
-   Esta es la paleta oficial. Todo el diseño está pensado para
-   funcionar solo con estos colores — evita agregar otros nuevos.
-
-     --azul  (#2C1261) → encabezados, botones principales, footer
-     --rojo  (#ED1A39) → acentos y estados activos. Se usa poco,
-                         a propósito, para que resalte cuando importa.
-
-   El resto son neutros: fondos, texto y bordes de apoyo.
-   ================================================================== */
+/* 1. Colores y tipografía */
 :root {
-  /* Colores institucionales */
   --azul: #2c1261;
   --rojo: #ed1a39;
 
-  /* Neutros: fondos, texto y bordes */
   --blanco: #ffffff;
   --fondo-alterno: #f8f9fc;
   --texto-principal: #1f2937;
   --texto-secundario: #6b7280;
   --borde: #e5e7eb;
 
-  /* Tipografía: Montserrat para títulos, Nunito para texto normal.
-     Para cambiar de fuente, edita estas dos variables junto con el
-     <link> de Google Fonts en index.html. */
   --fuente-titulo: "Montserrat", "Segoe UI", sans-serif;
   --fuente-texto: "Nunito", "Segoe UI", sans-serif;
 
-  /* Bordes redondeados y sombras reutilizables. Las transiciones son
-     cortas y sutiles a propósito: solo se notan al abrir/cerrar una
-     propuesta o al pasar el mouse sobre botones y tarjetas. */
   --radio-s: 8px;
   --radio-m: 12px;
   --sombra-suave: 0 1px 3px rgba(31, 41, 55, 0.06);
@@ -58,24 +24,16 @@
   --transicion: 160ms ease;
 }
 
-/* ==================================================================
-   2. BASE
-   ------------------------------------------------------------------
-   Reglas generales que aplican a todo el documento.
-   ================================================================== */
-
-/* Enlaces dentro de párrafos: color de acento, sin subrayado */
+/* 2. Base */
 p a {
   color: var(--rojo);
   text-decoration: none;
 }
 
-/* Todo mide su ancho/alto incluyendo el padding y el borde */
 * {
   box-sizing: border-box;
 }
 
-/* Desplazamiento suave al hacer clic en enlaces internos (#anclas) */
 html {
   scroll-behavior: smooth;
 }
@@ -97,8 +55,6 @@ h3 {
   color: var(--azul);
 }
 
-/* Enlace de accesibilidad: invisible hasta que se navega con
-   teclado (Tab), para saltar directo al listado de propuestas */
 .skip-link {
   position: absolute;
   left: -999px;
@@ -115,9 +71,26 @@ h3 {
   top: 0;
 }
 
-/* ==================================================================
-   3. BARRA SUPERIOR
-   ================================================================== */
+/* Logo flotante, esquina inferior izquierda */
+.logo-flotante {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  z-index: 999;
+  display: block;
+  line-height: 0;
+}
+
+.logo-flotante img {
+  opacity: 0.35;
+  transition: opacity var(--transicion);
+}
+
+.logo-flotante:hover img {
+  opacity: 0.8;
+}
+
+/* 3. Barra superior */
 .topbar {
   background: var(--azul);
   color: var(--blanco);
@@ -152,13 +125,7 @@ h3 {
   letter-spacing: 0.03em;
 }
 
-/* ==================================================================
-   4. HERO (portada)
-   ------------------------------------------------------------------
-   Texto a la izquierda, imagen a la derecha — sin animaciones ni
-   fondos decorativos. Para editar los textos de esta sección, ve a
-   index.html → <section class="hero">.
-   ================================================================== */
+/* 4. Hero */
 .hero {
   background: var(--fondo-alterno);
   border-bottom: 1px solid var(--borde);
@@ -213,8 +180,6 @@ h3 {
   margin-bottom: 40px;
 }
 
-/* Botones: un solo color principal cada uno. El hover solo cambia
-   el tono de fondo o borde — nada de movimiento ni sombras grandes. */
 .boton {
   display: inline-flex;
   align-items: center;
@@ -277,10 +242,6 @@ h3 {
   font-weight: 600;
 }
 
-/* Espacio para la imagen institucional del hero. Las instrucciones
-   completas están en index.html, junto a ".hero-imagen-wrap". La
-   proporción y el borde redondeado se mantienen automáticamente
-   apenas se coloca la imagen real. */
 .hero-imagen-wrap {
   width: 100%;
 }
@@ -322,13 +283,7 @@ h3 {
   display: block;
 }
 
-/* ==================================================================
-   4.5 RESULTADO DE LA VOTACIÓN
-   ------------------------------------------------------------------
-   Banner entre el hero y la barra de herramientas que anuncia la
-   propuesta electa. Para cambiar el texto, ve a index.html →
-   <section class="resultado-votacion">.
-   ================================================================== */
+/* 4.5 Resultado de la votación */
 .resultado-votacion {
   background: var(--azul);
 }
@@ -380,12 +335,7 @@ h3 {
   white-space: nowrap;
 }
 
-/* ==================================================================
-   5. BARRA DE HERRAMIENTAS (buscador)
-   ------------------------------------------------------------------
-   Franja fija en la parte de arriba (queda pegada al hacer scroll)
-   con el buscador y el contador de resultados.
-   ================================================================== */
+/* 5. Barra de herramientas (buscador) */
 .herramientas {
   background: var(--blanco);
   border-bottom: 1px solid var(--borde);
@@ -439,14 +389,7 @@ h3 {
   color: var(--azul);
 }
 
-/* ==================================================================
-   6. GRID Y TARJETAS DE PROPUESTAS
-   ------------------------------------------------------------------
-   El contenido de cada propuesta (título, autor, grupo, resumen,
-   PDF, enlace de Drive) NO se edita aquí — vive en el arreglo
-   "propuestas" dentro de script.js. Este archivo solo define su
-   apariencia.
-   ================================================================== */
+/* 6. Grid y tarjetas de propuestas (contenido en script.js) */
 .seccion-propuestas {
   max-width: 1180px;
   margin: 0 auto;
@@ -466,8 +409,6 @@ h3 {
   padding: 56px 0;
 }
 
-/* Tarjeta cerrada. El hover es discreto a propósito: solo cambia
-   el borde y la sombra, sin mover ni escalar la tarjeta. */
 .tarjeta {
   background: var(--blanco);
   border: 1px solid var(--borde);
@@ -503,7 +444,6 @@ h3 {
   color: inherit;
 }
 
-/* Círculo numerado de cada tarjeta: color plano, sin degradado */
 .tarjeta-insignia {
   position: relative;
   flex: none;
@@ -520,8 +460,6 @@ h3 {
   font-size: 0.95rem;
 }
 
-/* Marca de "revisada": círculo rojo con un check, superpuesto en
-   la esquina de la insignia numerada */
 .tarjeta-insignia-check {
   position: absolute;
   bottom: -5px;
@@ -594,8 +532,7 @@ h3 {
   }
 }
 
-/* Panel de detalle. Su altura real la calcula script.js
-   (panel.scrollHeight) para poder animar el despliegue. */
+/* Altura del panel calculada en script.js (panel.scrollHeight) */
 .tarjeta-panel {
   max-height: 0;
   overflow: hidden;
@@ -676,10 +613,7 @@ h3 {
   color: var(--rojo);
 }
 
-/* Visor de documentos. Es un iframe que carga el viewer.html de
-   PDF.js (con su propia barra de herramientas). Aquí solo se define
-   el tamaño del espacio que le damos — su interior es otro
-   documento y no se controla desde este archivo. */
+/* Visor de documentos: iframe con el viewer de PDF.js */
 .detalle-visor {
   border: 1px solid var(--borde);
   border-radius: var(--radio-m);
@@ -735,14 +669,7 @@ h3 {
   cursor: not-allowed;
 }
 
-/* ==================================================================
-   7. SELLO DE LA FRACCIÓN
-   ------------------------------------------------------------------
-   Logo de la fracción, centrado como un sello justo antes del pie
-   de página. (Antes iba flotando con opacidad baja sobre el
-   contenido, tipo marca de agua; ahora va sólido y en su propio
-   espacio, sin superponerse a nada.)
-   ================================================================== */
+/* 7. Sello de la fracción */
 .fracc-sello-wrap {
   display: flex;
   justify-content: center;
@@ -756,9 +683,7 @@ h3 {
   opacity: 1;
 }
 
-/* ==================================================================
-   8. PIE DE PÁGINA
-   ================================================================== */
+/* 8. Pie de página */
 .site-footer {
   background: var(--azul);
   color: #d8cfec;
@@ -792,12 +717,7 @@ h3 {
   display: inline-block;
 }
 
-/* ==================================================================
-   9. RESPONSIVE
-   ------------------------------------------------------------------
-   Ajustes para pantallas más angostas, de la más grande a la más
-   chica.
-   ================================================================== */
+/* 9. Responsive */
 @media (max-width: 900px) {
   .hero-inner {
     grid-template-columns: 1fr;
@@ -821,10 +741,6 @@ h3 {
     gap: 20px;
   }
 
-  /* Visor de PDF.js en celular: en vez de una altura fija de 500px
-     (pensada para escritorio), se usa un porcentaje de la pantalla
-     con un tope, para que el visor no se vea cortado ni obligue a
-     hacer mucho scroll interno. */
   .visor-contenido,
   .visor-placeholder {
     min-height: 60vh;
@@ -850,8 +766,6 @@ h3 {
   }
 }
 
-/* Si la persona activó "reducir movimiento" en su sistema, se
-   desactivan todas las transiciones y el scroll suave */
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
