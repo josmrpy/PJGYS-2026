@@ -176,7 +176,8 @@ function esVideoRuta(ruta) {
 
 function crearRutaVisorPDF(origen) {
   const archivo = new URL(origen, window.location.href).href;
-  return `pdfjs/web/viewer.html?file=${encodeURIComponent(archivo)}`;
+  const visor = new URL("pdfjs/web/viewer.html", window.location.href).href;
+  return `${visor}?file=${encodeURIComponent(archivo)}`;
 }
 
 function cargarVisor(tarjeta) {
