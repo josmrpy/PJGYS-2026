@@ -18,38 +18,34 @@ La página incluye:
 
 ## Estructura
 
-* `index.html` — Estructura principal del sitio.
-* `styles.css` — Diseño visual y estilos responsive.
-* `script.js` — Contiene la información de las propuestas y la lógica de interacción.
-* `logo.png` — Elemento gráfico institucional.
-* `hero.jpg` — Imagen opcional para la portada.
+Proyecto hecho con [Astro](https://astro.build) (salida estática, CSS y JavaScript sin framework de UI).
 
-## Gestión de propuestas
-
-Las propuestas se administran desde el archivo `script.js` mediante el arreglo `propuestas`.
-
-Cada propuesta contiene información como:
-
-* identificador
-* título de la iniciativa
-* autor
-* grupo Guía y Scout de origen
-* resumen
-* enlaces a documentos de trabajo
-
-Ejemplo de estructura:
-
-```js
-{
-  id: 1,
-  titulo: "Ley de accesibilidad comunicativa",
-  autor: "Nombre del autor",
-  grupo: "Grupo Guía y Scout",
-  resumen: "Descripción breve de la propuesta.",
-  drive: "Enlace al documento",
-  pdf: "Enlace al visor del documento"
-}
+```text
+src/
+  pages/index.astro          Página que compone todas las secciones
+  layouts/BaseLayout.astro   <head>, tipografías y script principal
+  components/                Topbar, Hero, ResultadoVotacion, Buscador, SelloFraccion, Footer...
+  data/propuestas.js         Datos de las propuestas (arreglo `propuestas`)
+  scripts/main.js            Lógica: tarjetas, buscador, visor y progreso guardado
+  styles/global.css          Diseño visual y estilos responsive
+  assets/images/             Imágenes optimizadas con astro:assets
+    logo_gys.png  hero.jpg  logo_fraccion_circular.png
+public/
+  favicon.ico
+  docs/                      propuesta01.pdf ... propuesta11.pdf (la 02 es .mp4)
+  pdfjs/                     PDF.js local (pdfjs/web/viewer.html, pdfjs/build/...)
+.github/workflows/deploy.yml Compila con Astro y publica en GitHub Pages
 ```
+
+## Desarrollo
+
+```bash
+npm install
+npm run dev      # servidor local: http://localhost:4321/PJGYS-2026/
+npm run build    # sitio estático en dist/
+```
+
+En el repositorio, configura **Settings → Pages → Source → GitHub Actions**.
 
 ## Propósito
 

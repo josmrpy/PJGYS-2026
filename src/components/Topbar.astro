@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+import logoGys from "../assets/images/logo_gys.png";
+---
+
+<!-- Barra superior -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <Image
+      src={logoGys}
+      alt="Parlamento Joven Guía y Scout Costa Rica"
+      class="topbar-logo"
+      height={128}
+      loading="eager"
+    />
+    <span class="topbar-tag">Repositorio de propuestas</span>
+  </div>
+</div>

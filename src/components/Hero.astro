@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import hero from "../assets/images/hero.jpg";
+---
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-texto">
+      <p class="hero-eyebrow">Fracción legislativa · Consulta ciudadana</p>
+
+      <h1>Propuestas Legislativas</h1>
+      <p class="hero-subtitulo">
+        Consulta y análisis de las iniciativas presentadas por la fracción
+        legislativa #4.
+      </p>
+      <p class="hero-desc">
+        Explora, lee y compara las propuestas presentadas por los integrantes de
+        la Fracción Legislativa. Este espacio reúne toda la documentación
+        necesaria para facilitar el análisis y la selección de la iniciativa que
+        representará a la fracción.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#propuestas" class="boton boton-primario"
+          >Explorar propuestas</a
+        >
+        <a href="#propuestas" class="boton boton-secundario">Ver documentos</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">11</span>
+          <span class="hero-stat-label">Propuestas presentadas</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" id="hero-stat-grupos">—</span>
+          <span class="hero-stat-label">Grupos participantes</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" id="hero-stat-revisadas">0</span>
+          <span class="hero-stat-label">Revisadas por ti</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-imagen-wrap">
+      <Image
+        src={hero}
+        alt="Descripción de la imagen"
+        class="hero-imagen"
+        width={1000}
+        height={750}
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+  </div>
+</section>

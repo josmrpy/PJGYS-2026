@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FloatingLogo from "../components/FloatingLogo.astro";
+import Topbar from "../components/Topbar.astro";
+import Hero from "../components/Hero.astro";
+import ResultadoVotacion from "../components/ResultadoVotacion.astro";
+import Buscador from "../components/Buscador.astro";
+import SelloFraccion from "../components/SelloFraccion.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout>
+  <FloatingLogo />
+
+  <a class="skip-link" href="#propuestas">Saltar al listado de propuestas</a>
+
+  <Topbar />
+  <Hero />
+  <ResultadoVotacion />
+  <Buscador />
+
+  <!-- Listado de propuestas: las tarjetas se generan desde src/scripts/main.js -->
+  <main id="propuestas" class="seccion-propuestas">
+    <div class="grid-propuestas" id="grid-propuestas"></div>
+    <p id="sin-resultados" class="sin-resultados" hidden>
+      No se encontraron propuestas con ese título.
+    </p>
+  </main>
+
+  <SelloFraccion />
+  <Footer />
+</BaseLayout>
