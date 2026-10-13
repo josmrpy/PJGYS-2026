@@ -37,16 +37,6 @@ public/
 .github/workflows/deploy.yml Compila con Astro y publica en GitHub Pages
 ```
 
-## Desarrollo
-
-```bash
-npm install
-npm run dev      # servidor local: http://localhost:4321/PJGYS-2026/
-npm run build    # sitio estático en dist/
-```
-
-En el repositorio, configura **Settings → Pages → Source → GitHub Actions**.
-
 ## Propósito
 
 El proyecto busca facilitar la organización del trabajo legislativo dentro del Parlamento Joven, creando un espacio donde las propuestas puedan consultarse, revisarse y mantenerse como registro de la experiencia.
